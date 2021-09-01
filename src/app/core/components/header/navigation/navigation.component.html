@@ -1,0 +1,11 @@
+<div class="logo" (click)="toRoot()">LOGO</div>
+<button class="catalog" (click)="toCategories()">catalog</button>
+<div class="serch">
+  <div class="serch-icon">o</div>
+  <div class="serch-input"></div>
+  <div class="serch-cancel">х</div>
+</div>
+<button class="profile" (click)="toggleProfile()">
+  <span class="profile-text">Аккаунт</span>
+  <app-profile *ngIf="showProfile"></app-profile>
+</button>

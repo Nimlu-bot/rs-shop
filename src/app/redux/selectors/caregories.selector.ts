@@ -1,0 +1,10 @@
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { ICategoriesState } from '../state/categories.state.model';
+
+export const selectCategoriesState =
+  createFeatureSelector<ICategoriesState>('categoriesState');
+
+export const selectCategories = createSelector(
+  selectCategoriesState,
+  (categoriesState) => categoriesState.categories
+);

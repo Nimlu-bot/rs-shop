@@ -4,6 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "server": "npm --prefix ./server/ run start",
+    "start:serv": "concurrently --kill-others \"npm run start\" \"npm run server\"",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -39,6 +41,7 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "4.28.2",
     "@typescript-eslint/parser": "4.28.2",
+    "concurrently": "^6.2.1",
     "eslint": "^7.26.0",
     "eslint-config-airbnb-angular": "^1.0.0",
     "eslint-config-airbnb-typescript": "^14.0.0",

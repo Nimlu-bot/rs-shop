@@ -7,18 +7,33 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
+import { CoreModule } from './core/core.module';
+import { CategoriesEffects } from './redux/effects/categories.effets';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    CoreModule,
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot(
+      {},
+      {
+        runtimeChecks: {
+          strictStateImmutability: true,
+          strictActionImmutability: true,
+          strictStateSerializability: true,
+          strictActionSerializability: true,
+          strictActionWithinNgZone: true,
+          strictActionTypeUniqueness: true,
+        },
+      }
+    ),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
     }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([CategoriesEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent],

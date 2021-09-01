@@ -1,0 +1,38 @@
+@import "/src/variables.scss";
+
+:host {
+  display: flex;
+  align-items: center;
+}
+
+.serch {
+  display: flex;
+  align-items: center;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 119px;
+  height: 42px;
+  border-radius: 80px;
+  border: 1px solid $text-gray-color;
+  position: relative;
+  background: transparent;
+  transition: 0.2s ease;
+  font-family: $alter-font-family;
+}
+
+.profile-text {
+  &::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-image: url("../../../../../assets/accaunt.svg");
+    width: 20px;
+    height: 20px;
+  }
+}

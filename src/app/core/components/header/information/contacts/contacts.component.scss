@@ -1,0 +1,27 @@
+@import "/src/variables.scss";
+
+:host {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.viber {
+  cursor: pointer;
+  font-family: inherit;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50px;
+
+    width: 24px;
+    height: 24px;
+
+    background-image: url("../../../../../../assets/viber.svg");
+  }
+}
+
+.viber-icon {
+  color: $icon-viber-fill-color;
+}

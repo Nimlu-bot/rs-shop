@@ -1,0 +1,14 @@
+@import "/src/variables.scss";
+
+:host {
+  display: flex;
+  align-items: center;
+}
+
+.work-text {
+  min-width: 74px;
+  margin-left: 2px;
+  font-size: 10px;
+  line-height: 14px;
+  color: $text-gray-color;
+}
