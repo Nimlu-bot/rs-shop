@@ -1,9 +1,18 @@
 <div class="profile-wrapper">
   <div class="avatar"></div>
-  <div class="login-btn">Войти</div>
+  <button
+    class="login-btn"
+    *ngIf="(isLogin | async) === false; else logout"
+    (click)="showHandler()"
+  >
+    Войти
+  </button>
   <div class="cart">Корзина</div>
-  <div class="line"></div>
-  <div class="featured">Избранные товары</div>
-  <div class="wieved">Просмотренные</div>
-  <div class="compare">список сравнения</div>
+  <div class="featured item">Избранные товары</div>
+  <div class="wieved item">Просмотренные</div>
+  <div class="compare item">список сравнения</div>
 </div>
+
+<ng-template #logout>
+  <button class="login-btn" (click)="logoutHandler()">Выйти</button>
+</ng-template>

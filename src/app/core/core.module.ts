@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
+import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavigationComponent } from './components/header/navigation/navigation.component';
@@ -12,6 +13,11 @@ import { LocationComponent } from './components/header/information/location/loca
 import { ContactsComponent } from './components/header/information/contacts/contacts.component';
 import { WorkTimeComponent } from './components/header/information/work-time/work-time.component';
 import { CategoriesReducer } from '../redux/reducers/categories.reducer';
+import { MoreContactsComponent } from './components/header/information/more-contacts/more-contacts.component';
+import { LoginComponent } from './components/header/navigation/login/login.component';
+import { FrontReducer } from '../redux/reducers/front.reducer';
+import { ModalComponent } from './components/modal/modal.component';
+import { AuthReducer } from '../redux/reducers/auth.reducer';
 
 @NgModule({
   declarations: [
@@ -24,11 +30,17 @@ import { CategoriesReducer } from '../redux/reducers/categories.reducer';
     LocationComponent,
     ContactsComponent,
     WorkTimeComponent,
+    MoreContactsComponent,
+    LoginComponent,
+    ModalComponent,
   ],
   imports: [
     CommonModule,
     HttpClientModule,
+    FormsModule,
     StoreModule.forFeature('categoriesState', CategoriesReducer),
+    StoreModule.forFeature('frontState', FrontReducer),
+    StoreModule.forFeature('authState', AuthReducer),
   ],
   exports: [
     HeaderComponent,
@@ -40,6 +52,8 @@ import { CategoriesReducer } from '../redux/reducers/categories.reducer';
     LocationComponent,
     ContactsComponent,
     WorkTimeComponent,
+    LoginComponent,
+    ModalComponent,
   ],
 })
 export class CoreModule {}

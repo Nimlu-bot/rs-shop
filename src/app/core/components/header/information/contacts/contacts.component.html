@@ -75,6 +75,10 @@
   <span class="phone">+375-29-666-66-66</span>
 </div>
 <div class="more-wrapper">
+  <button class="more" (click)="toggleMore()">Еще</button>
+  <app-more-contacts *ngIf="showMore"></app-more-contacts>
+</div>
+<!-- <div class="more-wrapper">
   <select>
     <option value="life">life phone</option>
     <option value="sity">sity</option>
@@ -84,4 +88,4 @@
     <option value="write">write</option>
     <option value="contacts">контакты</option>
   </select>
-</div>
+</div> -->

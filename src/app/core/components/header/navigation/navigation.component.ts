@@ -8,7 +8,7 @@ import { ROUT } from 'src/app/core/constants/constants';
   styleUrls: ['./navigation.component.scss'],
 })
 export class NavigationComponent {
-  showProfile = true;
+  showProfile = false;
 
   constructor(private router: Router) {}
 

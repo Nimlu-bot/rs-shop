@@ -1,0 +1,69 @@
+@import "/src/variables.scss";
+
+.login-wrapper {
+  padding-top: 32px;
+  width: 480px;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $base-font-family;
+}
+
+.title {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.form-group {
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.input-title {
+  text-align: start;
+  align-self: start;
+  font-size: 13px;
+  line-height: 20px;
+  color: $gray-color;
+}
+
+.input {
+  border: $button-border;
+  height: 40px;
+  width: 400px;
+  margin-top: 7px;
+}
+
+.login-btn {
+  margin-top: 20px;
+  align-self: center;
+  min-width: 91px;
+  background-color: $blue-color;
+  color: $white-color;
+  padding: 14px 24px;
+  line-height: 20px;
+  font-weight: 700;
+  border-radius: 4px;
+
+  &:disabled {
+    background-color: $gray-color;
+  }
+}
+
+.line {
+  width: 100%;
+
+  border-bottom: $button-border;
+}
+
+.link-btn {
+  margin-top: 20px;
+  align-self: center;
+  color: $blue-color;
+  font-size: 14px;
+  background-color: transparent;
+}

@@ -3,14 +3,36 @@
 :host {
   display: flex;
   align-items: center;
+  padding: 24px 0;
+  justify-content: space-around;
+  max-width: 1090px;
+  margin: 0 auto;
+}
+
+.catalog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  min-width: 119px;
+  border: $button-border;
+  margin: 0 10px;
+  border-radius: 80px;
+  font-family: $alter-font-family;
 }
 
 .serch {
   display: flex;
   align-items: center;
+  height: 42px;
+  min-width: 200px;
+  border: $button-border;
+  margin: 0 10px;
+  border-radius: 80px;
 }
 
-.profile {
+.profile,
+.cart {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,11 +40,12 @@
   width: 119px;
   height: 42px;
   border-radius: 80px;
-  border: 1px solid $text-gray-color;
   position: relative;
   background: transparent;
   transition: 0.2s ease;
   font-family: $alter-font-family;
+  border: $button-border;
+  margin-right: 10px;
 }
 
 .profile-text {

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Icategory } from '../constants/models';
@@ -8,7 +7,7 @@ import { Icategory } from '../constants/models';
   providedIn: 'root',
 })
 export class CategoriesService {
-  constructor(private http: HttpClient, private store: Store) {}
+  constructor(private http: HttpClient) {}
 
   getCategories(): Observable<Icategory[]> {
     return this.http.get<Icategory[]>(`http://localhost:3004/categories`);

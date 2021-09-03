@@ -1,0 +1,40 @@
+@import "/src/variables.scss";
+
+:host {
+  display: flex;
+}
+
+.main-categories {
+  width: 200px;
+  border-right: $button-border;
+}
+
+.category {
+  padding-left: 4px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.subcategories {
+  margin-left: 30px;
+}
+
+.subcategories-title {
+  margin: 14px 0;
+  font-size: 28px;
+  line-height: 34px;
+}
+
+.subcategory {
+  margin: 5px 0;
+}
+
+.subcategories-wrapper {
+  column-width: 48%;
+  column-count: 2;
+  column-gap: 4%;
+}

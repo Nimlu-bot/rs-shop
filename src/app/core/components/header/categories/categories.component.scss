@@ -1,7 +1,25 @@
+@import "/src/variables.scss";
+
 :host {
   display: flex;
+  height: 40px;
+  background: $gradient;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 20px;
 }
 
 .category {
-  margin-right: 10px;
+  margin-right: 5px;
+  color: $white-color;
+}
+
+@media (max-width: 800px) {
+  :host {
+    padding: 0 5px;
+  }
+
+  .category {
+    margin-right: 1px;
+  }
 }

@@ -4,11 +4,13 @@
   display: flex;
   align-items: center;
   text-align: center;
+  margin: 0 10px;
 }
 
 .viber {
   cursor: pointer;
   font-family: inherit;
+  position: relative;
 
   &::before {
     content: "";
@@ -18,10 +20,14 @@
     width: 24px;
     height: 24px;
 
-    background-image: url("../../../../../../assets/viber.svg");
+    //background-image: url("../../../../../../assets/viber.svg");
   }
 }
 
 .viber-icon {
   color: $icon-viber-fill-color;
+}
+
+.more-wrapper {
+  position: relative;
 }

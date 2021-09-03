@@ -9,11 +9,13 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { CoreModule } from './core/core.module';
 import { CategoriesEffects } from './redux/effects/categories.effets';
+import { ShopModule } from './shop/shop.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     CoreModule,
+    ShopModule,
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot(

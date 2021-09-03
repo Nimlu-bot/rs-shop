@@ -1,0 +1,16 @@
+<!-- <div
+  class="modal-wrapper"
+  #modal
+  [hidden]="(showLogin | async) === false"
+  (click)="toggleShow($event)"
+></div> -->
+
+<ng-container *ngIf="showLogin | async as display">
+  <section [class.open]="display === true" (click)="close()">
+    <div (click)="$event.stopPropagation()">
+      <button class="close" type="button" (click)="close()">X</button>
+
+      <app-login></app-login>
+    </div>
+  </section>
+</ng-container>

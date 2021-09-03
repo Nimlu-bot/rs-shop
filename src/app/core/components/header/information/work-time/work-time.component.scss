@@ -3,6 +3,7 @@
 :host {
   display: flex;
   align-items: center;
+  margin: 0 10px;
 }
 
 .work-text {
@@ -10,5 +11,5 @@
   margin-left: 2px;
   font-size: 10px;
   line-height: 14px;
-  color: $text-gray-color;
+  color: $gray-color;
 }

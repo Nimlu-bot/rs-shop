@@ -19,7 +19,5 @@ export class CategoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.dispatch(getCategories());
-
-    console.log(this.categories);
   }
 }

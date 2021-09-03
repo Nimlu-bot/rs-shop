@@ -1,4 +1,15 @@
+@import "/src/variables.scss";
+
 :host {
   display: flex;
   align-items: center;
+  padding: 5px 10px;
+  border-bottom: $button-border;
+  justify-content: space-between;
+}
+
+.rigth-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

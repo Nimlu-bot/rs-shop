@@ -1,0 +1,21 @@
+@import "/src/variables.scss";
+
+:host {
+  position: absolute;
+  display: flex;
+  top: 20px;
+  left: -120px;
+  width: 224px;
+  padding: 12px 0;
+  border-radius: 6px;
+  font-family: $alter-font-family;
+  box-shadow: 0 4px 12px 0 rgb(41 44 51 / 12%), 0 2px 2px 0 rgb(41 44 51 / 4%);
+  z-index: 15;
+  background-color: $white-color;
+  align-items: flex-start;
+}
+
+.more-item {
+  padding: 10px;
+  text-align: left;
+}

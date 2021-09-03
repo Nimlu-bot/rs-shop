@@ -8,3 +8,8 @@ export interface IsubCategory {
   id: string;
   name: string;
 }
+
+export interface Iauth {
+  email: string;
+  password: string;
+}

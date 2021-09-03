@@ -1,1 +1,19 @@
-<p>category works!</p>
+<div class="main-categories">
+  <p
+    class="category"
+    id="{{ item.id }}"
+    *ngFor="let item of categories | async"
+    (click)="clickHandler(item.id)"
+  >
+    {{ item.name }}
+  </p>
+</div>
+
+<div class="subcategories" *ngIf="!!currentCategory">
+  <div class="subcategories-title">{{ currentCategory.name }}</div>
+  <div class="subcategories-wrapper">
+    <p class="subcategory" *ngFor="let item of currentCategory.subCategories">
+      {{ item.name }}
+    </p>
+  </div>
+</div>
