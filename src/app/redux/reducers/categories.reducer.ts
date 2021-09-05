@@ -21,6 +21,13 @@ const reducer = createReducer(
   on(
     CategoryActions.getCategoriesFailed,
     (state, { error }): ICategoriesState => ({ ...state, error })
+  ),
+  on(
+    CategoryActions.setCategory,
+    (state, { categoryId }): ICategoriesState => ({
+      ...state,
+      currentCategory: categoryId,
+    })
   )
 );
 

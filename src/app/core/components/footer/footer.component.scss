@@ -1,0 +1,35 @@
+@import "/src/variables.scss";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.contacts_wrapper {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0;
+  border-top: $button-border;
+  border-bottom: $button-border;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-item {
+  width: 46px;
+  height: 46px;
+  background-color: $white-color;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+}

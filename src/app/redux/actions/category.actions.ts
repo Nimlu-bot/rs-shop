@@ -12,3 +12,8 @@ export const getCategoriesFailed = createAction(
   '[CATEGORIES EFFECT] FETCH CATEGORIES WAS FAILED',
   props<{ error: Error }>()
 );
+
+export const setCategory = createAction(
+  '[CATEGORIES ] GET CATEGORY',
+  props<{ categoryId: string }>()
+);

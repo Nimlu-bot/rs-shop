@@ -7,6 +7,8 @@ import { CategoryComponent } from './pages/category/category.component';
 import { FeaturedComponent } from './pages/featured/featured.component';
 import { WaitListComponent } from './pages/wait-list/wait-list.component';
 import { CategoriesReducer } from '../redux/reducers/categories.reducer';
+import { SliderComponent } from './components/slider/slider.component';
+import { PopularComponent } from './components/popular/popular.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { CategoriesReducer } from '../redux/reducers/categories.reducer';
     CategoryComponent,
     FeaturedComponent,
     WaitListComponent,
+    SliderComponent,
+    PopularComponent,
   ],
   imports: [
     CommonModule,

@@ -5,6 +5,8 @@ import { toggleLogin } from 'src/app/redux/actions/front.actions';
 import { selectLogin } from 'src/app/redux/selectors/front.selector';
 import { selectAuth } from 'src/app/redux/selectors/auth.selector';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { Router } from '@angular/router';
+import { ROUT } from 'src/app/core/constants/constants';
 
 @Component({
   selector: 'app-profile',
@@ -16,7 +18,11 @@ export class ProfileComponent implements OnInit {
 
   isLogin!: Observable<boolean>;
 
-  constructor(private store: Store, private authService: AuthService) {}
+  constructor(
+    private store: Store,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.showLogin = this.store.select(selectLogin);
@@ -29,5 +35,13 @@ export class ProfileComponent implements OnInit {
 
   logoutHandler() {
     this.authService.logOut();
+  }
+
+  toFeatured() {
+    this.router.navigate([ROUT.FEATURED]);
+  }
+
+  toWaitList() {
+    this.router.navigate([ROUT.WAIT]);
   }
 }

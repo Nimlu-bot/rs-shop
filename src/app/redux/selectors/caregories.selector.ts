@@ -8,3 +8,8 @@ export const selectCategories = createSelector(
   selectCategoriesState,
   (categoriesState) => categoriesState.categories
 );
+
+export const selectCurrentCategory = createSelector(
+  selectCategoriesState,
+  (categoriesState) => categoriesState.currentCategory
+);
