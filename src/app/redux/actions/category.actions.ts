@@ -17,3 +17,8 @@ export const setCategory = createAction(
   '[CATEGORIES ] GET CATEGORY',
   props<{ categoryId: string }>()
 );
+
+export const setCategoryAndSubCategory = createAction(
+  '[CATEGORIES ] SET CATEGORY AND SUBCATEGORY',
+  props<{ category:string,subCategory:string }>()
+);

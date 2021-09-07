@@ -28,6 +28,14 @@ const reducer = createReducer(
       ...state,
       currentCategory: categoryId,
     })
+  ),
+  on(
+    CategoryActions.setCategoryAndSubCategory,
+    (state, { category, subCategory }): ICategoriesState => ({
+      ...state,
+      currentCategory: category,
+      currentSubCategory: subCategory,
+    })
   )
 );
 

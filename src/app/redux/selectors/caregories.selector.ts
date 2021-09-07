@@ -13,3 +13,7 @@ export const selectCurrentCategory = createSelector(
   selectCategoriesState,
   (categoriesState) => categoriesState.currentCategory
 );
+export const selectCurrentSubCategory = createSelector(
+  selectCategoriesState,
+  (categoriesState) => categoriesState.currentSubCategory
+);

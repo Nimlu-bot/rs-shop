@@ -1,0 +1,7 @@
+<div class="bredcrumbs">{{ category.name }} / {{ subCategory.name }}</div>
+<div class="goods-wrapper">
+  <div class="product" *ngFor="let product of goods | async">
+    <app-card [productId]="product.id"></app-card>
+  </div>
+</div>
+<button class="more">Показать больше</button>

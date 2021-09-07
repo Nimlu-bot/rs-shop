@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 import { CoreModule } from './core/core.module';
 import { CategoriesEffects } from './redux/effects/categories.effets';
 import { ShopModule } from './shop/shop.module';
+import { GoodsEffects } from './redux/effects/goods.effets';
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,7 +36,7 @@ import { ShopModule } from './shop/shop.module';
       maxAge: 25,
       logOnly: environment.production,
     }),
-    EffectsModule.forRoot([CategoriesEffects]),
+    EffectsModule.forRoot([CategoriesEffects, GoodsEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent],
