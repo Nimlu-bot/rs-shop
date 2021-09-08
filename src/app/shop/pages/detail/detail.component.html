@@ -1,1 +1,41 @@
-<p>detail works!</p>
+<div class="bredcrumbs">{{ category.name }} / {{ subCategory.name }}</div>
+
+<p>{{ product.name }}</p>
+<div class="product-wrapper">
+  <div class="photo">
+    <div class="discount" *ngIf="product.rating === 5"></div>
+    <div class="img-wrapper">
+      <img src="{{ currentImage }}" alt="Description" />
+    </div>
+  </div>
+  <div class="slider-wrapper">
+    <ng-image-slider
+      [images]="imageObject"
+      [imagePopup]="false"
+      [manageImageRatio]="true"
+      [imageSize]="{ width: '125px', height: '125px' }"
+      (imageClick)="galleryClickHandler($event)"
+      #nav
+    ></ng-image-slider>
+  </div>
+</div>
+<div class="buttons-wrapper">
+  <button
+    class="button to-cart"
+    [disabled]="product.isInCart || product.availableAmount < 1"
+    (click)="toCart()"
+  >
+    В корзину
+  </button>
+
+  <p class="featured" *ngIf="!product.isFavorite" (click)="toggleFeatured()">
+    В избранное
+  </p>
+  <p class="featured" *ngIf="product.isFavorite" (click)="toggleFeatured()">
+    Из избранного
+  </p>
+</div>
+<div class="tab-wrapper">
+  <div class="tab">Обзор</div>
+</div>
+<div class="description">{{ product.description }}</div>

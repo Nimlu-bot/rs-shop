@@ -33,7 +33,7 @@ const reducer = createReducer(
         ? {
             ...product,
             isInCart: true,
-            availableAmount: product.availableAmount + 1,
+            availableAmount: product.availableAmount - 1,
           }
         : item
     );
@@ -50,7 +50,11 @@ const reducer = createReducer(
         : item
     );
     return { ...state, goods: newProducts };
-  })
+  }),
+  on(
+    GoodsActions.setCurrentProduct,
+    (state, { currentProduct }): IGoodsState => ({ ...state, currentProduct })
+  )
 );
 
 export function GoodsReducer(state: IGoodsState, action: Action) {

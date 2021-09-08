@@ -1,9 +1,9 @@
-<div class="photo">
+<div class="photo" (click)="toDetail()">
   <div class="img-wrapper">
     <img src="{{ product.imageUrls[0] }}" alt="Description" />
   </div>
 </div>
-<div class="title">{{ product.name }}</div>
+<div class="title" (click)="toDetail()">{{ product.name }}</div>
 <div class="stock-wrapper">
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,7 @@
   <div class="in-stock" *ngIf="product.availableAmount >= 1">В наличии</div>
   <div class="in-stock" *ngIf="product.availableAmount < 1">Ожидаем</div>
 </div>
-
+<div class="price">{{ product.price }} р.</div>
 <div class="rating">
   <div class="star" *appStars="product.rating"></div>
 </div>
@@ -41,4 +41,3 @@
 <p class="featured" *ngIf="product.isFavorite" (click)="toggleFeatured()">
   Из избранного
 </p>
-<div class="price">{{ product.price }} руб.</div>

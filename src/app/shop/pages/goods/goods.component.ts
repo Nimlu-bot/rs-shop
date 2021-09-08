@@ -1,11 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import {
   Iproduct,
   Icategory,
   IsubCategory,
+  IsortParams,
+  Category,
+  SubCategory,
 } from 'src/app/core/constants/models';
+import { FilterService } from 'src/app/core/services/filter.service';
 import {
   selectCategories,
   selectCurrentCategory,
@@ -18,20 +23,24 @@ import { selectGoods } from 'src/app/redux/selectors/goods.selector';
   templateUrl: './goods.component.html',
   styleUrls: ['./goods.component.scss'],
 })
-export class GoodsComponent implements OnInit {
+export class GoodsComponent implements OnInit, OnDestroy {
   goods!: Observable<Iproduct[]>;
 
   categoryId!: string;
 
   subCategoryId!: string;
 
-  categories!: Icategory[];
+  categories: Icategory[] = [];
 
-  category!: Icategory;
+  category: Icategory = new Category();
 
-  subCategory!: IsubCategory;
+  subCategory: IsubCategory = new SubCategory();
 
-  constructor(private store: Store) {}
+  filter: IsortParams | undefined;
+
+  private destroyed$ = new Subject<void>();
+
+  constructor(private filterService: FilterService, private store: Store) {}
 
   ngOnInit(): void {
     this.goods = this.store.select(selectGoods);
@@ -44,14 +53,29 @@ export class GoodsComponent implements OnInit {
     this.store.select(selectCategories).subscribe((categories) => {
       this.categories = categories;
     });
-    // eslint-disable-next-line prefer-destructuring
-    this.category = this.categories.filter(
-      (cat) => cat.id === this.categoryId
-    )[0];
 
-    // eslint-disable-next-line prefer-destructuring
-    this.subCategory = this.category.subCategories.filter(
-      (cat) => cat.id === this.subCategoryId
-    )[0];
+    if (this.categories.length) {
+      const tmpCategory = this.categories.filter(
+        (cat) => cat.id === this.categoryId
+      )[0];
+      if (tmpCategory) {
+        this.category = tmpCategory;
+        const tmpSubCategory = this.category.subCategories.filter(
+          (cat) => cat.id === this.subCategoryId
+        )[0];
+        if (tmpSubCategory) this.subCategory = tmpSubCategory;
+      }
+    }
+
+    this.filterService.sortParams$
+      .pipe(takeUntil(this.destroyed$))
+      .subscribe((filter) => {
+        this.filter = filter;
+      });
+  }
+
+  ngOnDestroy() {
+    this.destroyed$.next();
+    this.destroyed$.complete();
   }
 }

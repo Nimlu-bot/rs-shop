@@ -1,6 +1,11 @@
 <div class="bredcrumbs">{{ category.name }} / {{ subCategory.name }}</div>
+<div class="title">{{ subCategory.name }}</div>
+<app-sort></app-sort>
 <div class="goods-wrapper">
-  <div class="product" *ngFor="let product of goods | async">
+  <div
+    class="product"
+    *ngFor="let product of goods | async | sortOrder: filter"
+  >
     <app-card [productId]="product.id"></app-card>
   </div>
 </div>

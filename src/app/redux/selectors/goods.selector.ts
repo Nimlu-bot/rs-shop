@@ -8,3 +8,7 @@ export const selectGoods = createSelector(
   selectGoodsState,
   (goodsState) => goodsState.goods
 );
+export const selectCurrentProduct = createSelector(
+  selectGoodsState,
+  (goodsState) => goodsState.currentProduct
+);

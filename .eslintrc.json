@@ -35,7 +35,9 @@
         ],
         "@typescript-eslint/class-name-casing": "off",
         "import/prefer-default-export": "off",
-        "class-methods-use-this": "off"
+        "class-methods-use-this": "off",
+        "ngrx/no-store-subscription": "off",
+        "max-classes-per-file": "off"
       },
       "plugins": ["ngrx"]
     },

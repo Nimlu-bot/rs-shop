@@ -33,3 +33,7 @@ export const fromCart = createAction(
   '[GOODS ] From CART',
   props<{ product: Iproduct }>()
 );
+export const setCurrentProduct = createAction(
+  '[GOODS ] SET CURRENT PRODUCT',
+  props<{ currentProduct: Iproduct }>()
+);

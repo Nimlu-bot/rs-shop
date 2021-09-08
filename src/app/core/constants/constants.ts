@@ -5,6 +5,7 @@ export enum ROUT {
   FEATURED = 'featured',
   WAIT = 'wait-list',
   GOODS = 'goods',
+  DETAIL = 'detail',
 }
 
 export const FIRST_STEP = 5;

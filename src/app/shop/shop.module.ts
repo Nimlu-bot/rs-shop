@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
+import { NgImageSliderModule } from 'ng-image-slider';
 import { MainComponent } from './pages/main/main.component';
 import { DetailComponent } from './pages/detail/detail.component';
 import { CategoryComponent } from './pages/category/category.component';
@@ -14,6 +15,8 @@ import { GoodsReducer } from '../redux/reducers/goods.reducer';
 import { CardComponent } from './components/card/card.component';
 import { AppStarsDirective } from './directives/star.directive';
 import { ColorDirective } from './directives/amount.directive';
+import { SortComponent } from './components/sort/sort.component';
+import { SortOrderPipe } from './pipes/sort-order.pipe';
 
 @NgModule({
   declarations: [
@@ -28,9 +31,12 @@ import { ColorDirective } from './directives/amount.directive';
     CardComponent,
     AppStarsDirective,
     ColorDirective,
+    SortComponent,
+    SortOrderPipe,
   ],
   imports: [
     CommonModule,
+    NgImageSliderModule,
     StoreModule.forFeature('categoriesState', CategoriesReducer),
     StoreModule.forFeature('goodsState', GoodsReducer),
   ],

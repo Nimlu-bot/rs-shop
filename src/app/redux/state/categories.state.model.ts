@@ -1,4 +1,4 @@
-import { Icategory } from 'src/app/core/constants/models';
+import { Category, Icategory } from 'src/app/core/constants/models';
 
 export interface ICategoriesState {
   categories: Icategory[];
@@ -10,7 +10,7 @@ export interface ICategoriesState {
   error: Error | null;
 }
 export const initialCategoriesState: ICategoriesState = {
-  categories: [],
+  categories: [new Category()],
   currentCategory: 'appliances',
   currentSubCategory: 'refrigerators',
   isLogged: false,
