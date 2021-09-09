@@ -28,6 +28,22 @@ export interface Iproduct {
   subCategory?: string;
 }
 
+export interface IcartProduct extends Iproduct {
+  amount?: number;
+  deliveryTime?: string;
+}
+
+export interface IdeliveryInfo {
+  id: string;
+  name: string;
+  address: string;
+  phone: string;
+  time: string;
+  comment: string;
+  complited: boolean;
+  products: IcartProduct[];
+  deliveryTime?: string;
+}
 export interface IsortParams {
   price: boolean;
   priceReverse: boolean;
@@ -97,5 +113,34 @@ export class Category implements Icategory {
     this.id = '';
     this.name = '';
     this.subCategories = [new SubCategory()];
+  }
+}
+
+export class DeliveryInfo implements IdeliveryInfo {
+  id: string;
+
+  name: string;
+
+  address: string;
+
+  phone: string;
+
+  time: string;
+
+  comment: string;
+
+  complited: boolean;
+
+  products: IcartProduct[];
+
+  constructor() {
+    this.id = '';
+    this.name = '';
+    this.address = '';
+    this.phone = '';
+    this.time = '';
+    this.comment = '';
+    this.complited = false;
+    this.products = [];
   }
 }

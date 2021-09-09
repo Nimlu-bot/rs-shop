@@ -2,7 +2,7 @@ export enum ROUT {
   ROOT = '',
   CATEGORIES = 'categories',
   NOTFOUND = '**',
-  FEATURED = 'featured',
+  FAVORITE = 'favorite',
   WAIT = 'wait-list',
   GOODS = 'goods',
   DETAIL = 'detail',

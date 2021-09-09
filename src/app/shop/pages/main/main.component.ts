@@ -1,8 +1,15 @@
+/* eslint-disable ngrx/avoid-dispatching-multiple-actions-sequentially */
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { Icategory } from 'src/app/core/constants/models';
-import { selectCategories } from 'src/app/redux/selectors/caregories.selector';
+import { ROUT } from 'src/app/core/constants/constants';
+import { Iimage, Iproduct } from 'src/app/core/constants/models';
+import { setCategoryAndSubCategory } from 'src/app/redux/actions/category.actions';
+import {
+  getGoods,
+  setCurrentProduct,
+} from 'src/app/redux/actions/goods.actions';
+import { selectGoods } from 'src/app/redux/selectors/goods.selector';
 
 @Component({
   selector: 'app-main',
@@ -10,11 +17,46 @@ import { selectCategories } from 'src/app/redux/selectors/caregories.selector';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit {
-  categories!: Observable<Icategory[]>;
+  currentCategory = 'electronics';
 
-  constructor(private store: Store) {}
+  curentSubCategory = 'mobile';
+
+  goods!: Iproduct[];
+
+  imageObject: Iimage[] = [];
+
+  constructor(private store: Store, private router: Router) {
+    this.store.dispatch(
+      getGoods({
+        category: this.currentCategory,
+        subCategory: this.curentSubCategory,
+      })
+    );
+    this.store.dispatch(
+      setCategoryAndSubCategory({
+        category: this.currentCategory,
+        subCategory: this.curentSubCategory,
+      })
+    );
+  }
 
   ngOnInit(): void {
-    this.categories = this.store.select(selectCategories);
+    this.store.select(selectGoods).subscribe((goods) => {
+      this.goods = goods;
+      this.imageObject = goods.map((product) => ({
+        image: product.imageUrls[0],
+        thumbImage: product.imageUrls[0],
+        title: product.name,
+      }));
+    });
+  }
+
+  galleryClickHandler(event: number) {
+    this.store.dispatch(
+      setCurrentProduct({ currentProduct: this.goods[event] })
+    );
+
+    this.router.navigate([ROUT.DETAIL]);
+    console.log(event);
   }
 }

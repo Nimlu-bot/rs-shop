@@ -7,3 +7,16 @@ export const selectAuth = createSelector(
   selectAuthState,
   (authState) => authState.isLogin
 );
+export const selectCurrentOrder = createSelector(
+  selectAuthState,
+  (authState) => authState.currentOrder
+);
+export const selectOrders = createSelector(
+  selectAuthState,
+  (authState) => authState.orders
+);
+
+export const selectFavorite = createSelector(
+  selectAuthState,
+  (authState) => authState.favorite
+);

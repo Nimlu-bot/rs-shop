@@ -25,6 +25,15 @@ export const toggleFavorite = createAction(
   '[GOODS ] TOGGLE FAVORITE',
   props<{ product: Iproduct }>()
 );
+export const toFavorite = createAction(
+  '[GOODS ] TO FAVORITE',
+  props<{ product: Iproduct }>()
+);
+export const fromFavorite = createAction(
+  '[GOODS ] From FAVORITE',
+  props<{ product: Iproduct }>()
+);
+
 export const toCart = createAction(
   '[GOODS ] TO CART',
   props<{ product: Iproduct }>()

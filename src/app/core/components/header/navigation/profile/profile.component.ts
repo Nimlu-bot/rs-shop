@@ -37,8 +37,8 @@ export class ProfileComponent implements OnInit {
     this.authService.logOut();
   }
 
-  toFeatured() {
-    this.router.navigate([ROUT.FEATURED]);
+  toFavorite() {
+    this.router.navigate([ROUT.FAVORITE]);
   }
 
   toWaitList() {

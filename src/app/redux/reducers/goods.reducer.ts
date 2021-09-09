@@ -27,6 +27,15 @@ const reducer = createReducer(
     );
     return { ...state, goods: newProducts };
   }),
+  on(GoodsActions.toFavorite, (state, { product }): IGoodsState => {
+    const newProducts = state.goods.map((item) =>
+      item.id === product.id
+        ? { ...product, isFavorite: !product.isFavorite }
+        : item
+    );
+    return { ...state, goods: newProducts };
+  }),
+
   on(GoodsActions.toCart, (state, { product }): IGoodsState => {
     const newProducts = state.goods.map((item) =>
       item.id === product.id

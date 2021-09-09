@@ -63,23 +63,7 @@ export class DetailComponent implements OnInit {
     this.store.select(selectCategories).subscribe((categories) => {
       this.categories = categories;
     });
-    // if (this.categories.length) {
-    //   // eslint-disable-next-line prefer-destructuring
-    //   this.category = this.categories.filter(
-    //     (cat) => cat.id === this.categoryId
-    //   )[0];
-
-    //   // eslint-disable-next-line prefer-destructuring
-    //   this.subCategory = this.category.subCategories.filter(
-    //     (cat) => cat.id === this.subCategoryId
-    //   )[0];
-
-    //   this.imageObject = this.product.imageUrls.map((url) => ({
-    //     image: url,
-    //     thumbImage: url,
-    //   }));
-    //   this.currentImage = this.imageObject[0].image;
-    // }
+   
     if (this.categories.length) {
       const tmpCategory = this.categories.filter(
         (cat) => cat.id === this.categoryId

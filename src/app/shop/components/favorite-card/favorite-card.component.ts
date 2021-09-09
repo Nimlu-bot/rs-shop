@@ -1,23 +1,21 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Iproduct } from 'src/app/core/constants/models';
-import { selectGoods } from 'src/app/redux/selectors/goods.selector';
 import {
   setCurrentProduct,
   toCart,
-  toggleFavorite,
 } from 'src/app/redux/actions/goods.actions';
 import { Router } from '@angular/router';
 import { ROUT } from 'src/app/core/constants/constants';
-import { fromFavorite, toFavorite } from 'src/app/redux/actions/auth.actions';
+import { fromFavorite } from 'src/app/redux/actions/auth.actions';
 import { selectFavorite } from 'src/app/redux/selectors/auth.selector';
 
 @Component({
-  selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss'],
+  selector: 'app-favorite-card',
+  templateUrl: './favorite-card.component.html',
+  styleUrls: ['./favorite-card.component.scss'],
 })
-export class CardComponent implements OnInit {
+export class FavoriteCardComponent implements OnInit {
   @Input() productId!: string;
 
   product!: Iproduct;
@@ -27,23 +25,13 @@ export class CardComponent implements OnInit {
   constructor(private store: Store, private router: Router) {}
 
   ngOnInit(): void {
-    this.store.select(selectGoods).subscribe((products) => {
+
+    this.store.select(selectFavorite).subscribe((items) => {
       // eslint-disable-next-line prefer-destructuring
-      this.product = products.filter(
+      this.product = items.filter(
         (product) => product.id === this.productId
       )[0];
     });
-    this.store.select(selectFavorite).subscribe((items) => {
-      this.isFavorite = !!items.find((item) => item.id === this.productId);
-    });
-  }
-
-  toggleFeatured() {
-    this.store.dispatch(toggleFavorite({ product: this.product }));
-  }
-
-  toFavorite() {
-    this.store.dispatch(toFavorite({ product: this.product }));
   }
 
   fromFavorite() {

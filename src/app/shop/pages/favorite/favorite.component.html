@@ -1,0 +1,6 @@
+<p>favorite works!</p>
+<div class="favorite-wrapper">
+  <div class="product" *ngFor="let item of items | async">
+    <app-favorite-card [productId]="item.id"></app-favorite-card>
+  </div>
+</div>

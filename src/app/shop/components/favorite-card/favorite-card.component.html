@@ -35,7 +35,4 @@
 >
   В корзину
 </button>
-<p class="featured" *ngIf="!isFavorite" (click)="toFavorite()">В избранное</p>
-<p class="featured" *ngIf="isFavorite" (click)="fromFavorite()">
-  Из избранного
-</p>
+<p class="featured" (click)="fromFavorite()">Из избранного</p>
