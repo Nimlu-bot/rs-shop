@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
 import { NgImageSliderModule } from 'ng-image-slider';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MyDatePickerModule } from 'mydatepicker';
 import { MainComponent } from './pages/main/main.component';
 import { DetailComponent } from './pages/detail/detail.component';
 import { CategoryComponent } from './pages/category/category.component';
@@ -19,6 +21,11 @@ import { SortOrderPipe } from './pipes/sort-order.pipe';
 import { FavoriteComponent } from './pages/favorite/favorite.component';
 import { AuthReducer } from '../redux/reducers/auth.reducer';
 import { FavoriteCardComponent } from './components/favorite-card/favorite-card.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { CartCardComponent } from './components/cart-card/cart-card.component';
+import { CartFormComponent } from './components/cart-form/cart-form.component';
+import { ConfirmComponent } from './components/confirm/confirm.component';
+import { WaitCardComponent } from './components/wait-card/wait-card.component';
 
 @NgModule({
   declarations: [
@@ -35,11 +42,19 @@ import { FavoriteCardComponent } from './components/favorite-card/favorite-card.
     SortComponent,
     SortOrderPipe,
     FavoriteComponent,
-    FavoriteCardComponent
+    FavoriteCardComponent,
+    CartCardComponent,
+    CartComponent,
+    CartFormComponent,
+    ConfirmComponent,
+    WaitCardComponent,
   ],
   imports: [
     CommonModule,
     NgImageSliderModule,
+    FormsModule,
+    MyDatePickerModule,
+    ReactiveFormsModule,
     StoreModule.forFeature('categoriesState', CategoriesReducer),
     StoreModule.forFeature('goodsState', GoodsReducer),
     StoreModule.forFeature('authState', AuthReducer),

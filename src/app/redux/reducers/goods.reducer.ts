@@ -36,30 +36,30 @@ const reducer = createReducer(
     return { ...state, goods: newProducts };
   }),
 
-  on(GoodsActions.toCart, (state, { product }): IGoodsState => {
-    const newProducts = state.goods.map((item) =>
-      item.id === product.id
-        ? {
-            ...product,
-            isInCart: true,
-            availableAmount: product.availableAmount - 1,
-          }
-        : item
-    );
-    return { ...state, goods: newProducts };
-  }),
-  on(GoodsActions.fromCart, (state, { product }): IGoodsState => {
-    const newProducts = state.goods.map((item) =>
-      item.id === product.id
-        ? {
-            ...product,
-            isInCart: false,
-            availableAmount: product.availableAmount + 1,
-          }
-        : item
-    );
-    return { ...state, goods: newProducts };
-  }),
+  // on(GoodsActions.toCart, (state, { product }): IGoodsState => {
+  //   const newProducts = state.goods.map((item) =>
+  //     item.id === product.id
+  //       ? {
+  //           ...product,
+  //           isInCart: true,
+  //           availableAmount: product.availableAmount - 1,
+  //         }
+  //       : item
+  //   );
+  //   return { ...state, goods: newProducts };
+  // }),
+  // on(GoodsActions.fromCart, (state, { product }): IGoodsState => {
+  //   const newProducts = state.goods.map((item) =>
+  //     item.id === product.id
+  //       ? {
+  //           ...product,
+  //           isInCart: false,
+  //           availableAmount: product.availableAmount + 1,
+  //         }
+  //       : item
+  //   );
+  //   return { ...state, goods: newProducts };
+  // }),
   on(
     GoodsActions.setCurrentProduct,
     (state, { currentProduct }): IGoodsState => ({ ...state, currentProduct })

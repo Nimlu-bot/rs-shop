@@ -22,6 +22,7 @@
   padding: 10px;
   border-bottom: $button-border;
   text-align: left;
+  cursor: pointer;
 
   &::before {
     content: "";

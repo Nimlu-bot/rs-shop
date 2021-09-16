@@ -1,0 +1,14 @@
+<div class="photo" (click)="toDetail()">
+  <div class="img-wrapper">
+    <img src="{{ product.imageUrls[0] }}" alt="Description" />
+  </div>
+</div>
+<div class="title" (click)="toDetail()">{{ product.name }}</div>
+<div class="description">{{ product.description }}</div>
+<div class="amount-wrapper">
+  <div class="arrow" (click)="decreaseAmount()">-</div>
+  <div class="amount">{{ product.amount }}</div>
+  <div class="arrow" (click)="increaseAmount()">+</div>
+</div>
+<div class="price">{{ product.price! * product.amount! }}</div>
+<div class="delete" (click)="fromCart()">Удалить</div>

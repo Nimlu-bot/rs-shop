@@ -30,7 +30,7 @@
 </div>
 <button
   class="cart"
-  [disabled]="product.isInCart || product.availableAmount < 1"
+  [disabled]="isInCart || product.availableAmount < 1"
   (click)="toCart()"
 >
   В корзину

@@ -9,7 +9,8 @@ import {
   Product,
   SubCategory,
 } from 'src/app/core/constants/models';
-import { toggleFavorite, toCart } from 'src/app/redux/actions/goods.actions';
+import { toCart } from 'src/app/redux/actions/auth.actions';
+import { toggleFavorite } from 'src/app/redux/actions/goods.actions';
 import {
   selectCategories,
   selectCurrentCategory,
@@ -63,7 +64,7 @@ export class DetailComponent implements OnInit {
     this.store.select(selectCategories).subscribe((categories) => {
       this.categories = categories;
     });
-   
+
     if (this.categories.length) {
       const tmpCategory = this.categories.filter(
         (cat) => cat.id === this.categoryId

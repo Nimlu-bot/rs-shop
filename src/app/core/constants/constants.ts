@@ -6,6 +6,7 @@ export enum ROUT {
   WAIT = 'wait-list',
   GOODS = 'goods',
   DETAIL = 'detail',
+  CART = 'cart',
 }
 
 export const FIRST_STEP = 5;

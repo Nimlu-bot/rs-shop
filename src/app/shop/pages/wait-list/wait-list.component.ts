@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { IdeliveryInfo } from 'src/app/core/constants/models';
+import { selectOrders } from 'src/app/redux/selectors/auth.selector';
 
 @Component({
   selector: 'app-wait-list',
@@ -6,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wait-list.component.scss'],
 })
 export class WaitListComponent implements OnInit {
-  constructor() {}
+  orders!: IdeliveryInfo[];
 
-  ngOnInit(): void {}
+  constructor(private store: Store) {}
+
+  ngOnInit(): void {
+    this.store.select(selectOrders).subscribe((orders) => {
+      this.orders = orders;
+
+    });
+  }
 }

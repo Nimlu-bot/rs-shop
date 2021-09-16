@@ -1,13 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Iproduct } from 'src/app/core/constants/models';
-import {
-  setCurrentProduct,
-  toCart,
-} from 'src/app/redux/actions/goods.actions';
+import { setCurrentProduct } from 'src/app/redux/actions/goods.actions';
 import { Router } from '@angular/router';
 import { ROUT } from 'src/app/core/constants/constants';
-import { fromFavorite } from 'src/app/redux/actions/auth.actions';
+import { fromFavorite, toCart } from 'src/app/redux/actions/auth.actions';
 import { selectFavorite } from 'src/app/redux/selectors/auth.selector';
 
 @Component({
@@ -25,7 +22,6 @@ export class FavoriteCardComponent implements OnInit {
   constructor(private store: Store, private router: Router) {}
 
   ngOnInit(): void {
-
     this.store.select(selectFavorite).subscribe((items) => {
       // eslint-disable-next-line prefer-destructuring
       this.product = items.filter(

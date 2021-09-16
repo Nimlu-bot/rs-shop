@@ -4,13 +4,17 @@ import { Iproduct } from 'src/app/core/constants/models';
 import { selectGoods } from 'src/app/redux/selectors/goods.selector';
 import {
   setCurrentProduct,
-  toCart,
   toggleFavorite,
 } from 'src/app/redux/actions/goods.actions';
 import { Router } from '@angular/router';
 import { ROUT } from 'src/app/core/constants/constants';
-import { fromFavorite, toFavorite } from 'src/app/redux/actions/auth.actions';
+import {
+  fromFavorite,
+  toCart,
+  toFavorite,
+} from 'src/app/redux/actions/auth.actions';
 import { selectFavorite } from 'src/app/redux/selectors/auth.selector';
+import { selectCurrentOrder } from '../../../redux/selectors/auth.selector';
 
 @Component({
   selector: 'app-card',
@@ -24,6 +28,8 @@ export class CardComponent implements OnInit {
 
   isFavorite!: boolean;
 
+  isInCart!: boolean;
+
   constructor(private store: Store, private router: Router) {}
 
   ngOnInit(): void {
@@ -35,6 +41,9 @@ export class CardComponent implements OnInit {
     });
     this.store.select(selectFavorite).subscribe((items) => {
       this.isFavorite = !!items.find((item) => item.id === this.productId);
+    });
+    this.store.select(selectCurrentOrder).subscribe((items) => {
+      this.isInCart = !!items.find((item) => item.id === this.productId);
     });
   }
 

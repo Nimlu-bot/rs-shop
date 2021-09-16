@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Iauth, Iproduct } from 'src/app/core/constants/models';
+import { Iauth, IdeliveryInfo, Iproduct } from 'src/app/core/constants/models';
 
 export const login = createAction(
   '[LOGIN] LOGIN',
@@ -23,3 +23,16 @@ export const fromCart = createAction(
   '[USER] FROM CART',
   props<{ product: Iproduct }>()
 );
+export const increaseAmount = createAction(
+  '[USER] INCREASE AMOUNT',
+  props<{ product: Iproduct }>()
+);
+export const decreaseAmount = createAction(
+  '[USER] DECREASE AMOUNT',
+  props<{ product: Iproduct }>()
+);
+export const createOrder = createAction(
+  '[USER] CREATE ORDER',
+  props<{ order: IdeliveryInfo }>()
+);
+export const clearCurrentOrder = createAction('[USER] CLEAR CURRENT ORDER');

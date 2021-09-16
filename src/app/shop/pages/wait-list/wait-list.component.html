@@ -1,1 +1,4 @@
-<p>wait-list works!</p>
+<div class="wait-card" *ngFor="let item of orders">
+  <app-wait-card [order]=item></app-wait-card>
+
+</div>

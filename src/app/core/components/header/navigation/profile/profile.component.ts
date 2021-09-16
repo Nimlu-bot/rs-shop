@@ -37,6 +37,10 @@ export class ProfileComponent implements OnInit {
     this.authService.logOut();
   }
 
+  toCart() {
+    this.router.navigate([ROUT.CART]);
+  }
+
   toFavorite() {
     this.router.navigate([ROUT.FAVORITE]);
   }
