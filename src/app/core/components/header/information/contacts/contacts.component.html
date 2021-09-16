@@ -74,9 +74,32 @@
   </svg>
   <span class="phone">+375-29-666-66-66</span>
 </div>
-<div class="more-wrapper">
+<!-- <div class="more-wrapper">
   <button class="more" (click)="toggleMore()">Еще</button>
   <app-more-contacts *ngIf="showMore"></app-more-contacts>
+</div> -->
+<div ngDropdown [renderInPlace]="true" horizontalPosition="center">
+  <button ngDropdownControl class="more">
+    <span class="more-text">Еще</span>
+  </button>
+  <div ngDropdownContent dropdownClass="slide-fade">
+    <ul class="ul">
+      <li class="dd-item"></li>
+      <li class="dd-item">
+        <div class="more-item" value="life">life phone</div>
+      </li>
+      <li class="dd-item"><div class="more-item" value="sity">sity</div></li>
+      <li class="dd-item"><div class="more-item" value="tg">tg</div></li>
+      <li class="dd-item"><div class="more-item" value="mail">mail</div></li>
+      <li class="dd-item">
+        <div class="more-item" value="back-phone">back-phone</div>
+      </li>
+      <li class="dd-item"><div class="more-item" value="write">write</div></li>
+      <li class="dd-item">
+        <div class="more-item" value="contacts">контакты</div>
+      </li>
+    </ul>
+  </div>
 </div>
 <!-- <div class="more-wrapper">
   <select>

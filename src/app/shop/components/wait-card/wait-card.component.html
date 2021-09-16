@@ -1,9 +1,23 @@
 <div class="wrapper">
-  <div class="address">{{ order.address }}</div>
-  <div class="priсe">
-    {{ price }}
+  <div class="address item">{{ order.address }}</div>
+  <div class="priсe item">{{ price }}</div>
+  <div class="number item">{{ order.id }}</div>
+  <div ngDropdown [renderInPlace]="true" [horizontalPosition]="'center'">
+    <button ngDropdownControl>Продукты</button>
+    <div ngDropdownContent dropdownClass="slide-fade">
+      <ul class="ul">
+        <li class="dd-item" *ngFor="let item of order.products">
+          <div class="name">
+            {{ item.name }}
+          </div>
+          <div class="amount">{{ item.amount }} шт.</div>
+          <div class="price">{{ (item.amount || 1) * item.price }} р.</div>
+        </li>
+      </ul>
+    </div>
   </div>
-  <div class="number">{{ order.id }}</div>
-  <button class="cancel">Отмена</button>
-  <button class="edit">Ред.</button>
+  <div class="btn-wrapper">
+    <button class="cancel btn">Отмена</button>
+    <button class="edit btn">Ред.</button>
+  </div>
 </div>

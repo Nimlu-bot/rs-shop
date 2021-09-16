@@ -1,0 +1,57 @@
+@import "~angular-dropdown/styles";
+
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  width: 80%;
+  margin: 20px;
+  align-items: center;
+}
+
+.item {
+  margin: 0 10px;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 140px;
+}
+
+.btn {
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 31px;
+  background: #ea1653;
+  width: 62px;
+  color: #ffffff;
+}
+
+.ul {
+  margin-top: 20px;
+}
+
+.dd-item {
+  width: 510px;
+  padding: 10px 5px;
+  display: flex;
+}
+
+.name,
+.amount,
+.price {
+  margin: 0 10px;
+}
+
+.name {
+  font-weight: bold;
+  max-width: 300px;
+}

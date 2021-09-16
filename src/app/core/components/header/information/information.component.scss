@@ -5,11 +5,12 @@
   align-items: center;
   padding: 5px 10px;
   border-bottom: $button-border;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .rigth-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-width: 510px;
 }

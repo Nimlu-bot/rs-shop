@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { FormsModule } from '@angular/forms';
+import { AngularDropdownModule } from 'angular-dropdown';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavigationComponent } from './components/header/navigation/navigation.component';
@@ -38,6 +39,7 @@ import { AuthReducer } from '../redux/reducers/auth.reducer';
     CommonModule,
     HttpClientModule,
     FormsModule,
+    AngularDropdownModule,
     StoreModule.forFeature('categoriesState', CategoriesReducer),
     StoreModule.forFeature('frontState', FrontReducer),
     StoreModule.forFeature('authState', AuthReducer),

@@ -4,6 +4,7 @@ import { StoreModule } from '@ngrx/store';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyDatePickerModule } from 'mydatepicker';
+import { AngularDropdownModule } from 'angular-dropdown';
 import { MainComponent } from './pages/main/main.component';
 import { DetailComponent } from './pages/detail/detail.component';
 import { CategoryComponent } from './pages/category/category.component';
@@ -55,6 +56,7 @@ import { WaitCardComponent } from './components/wait-card/wait-card.component';
     FormsModule,
     MyDatePickerModule,
     ReactiveFormsModule,
+    AngularDropdownModule,
     StoreModule.forFeature('categoriesState', CategoriesReducer),
     StoreModule.forFeature('goodsState', GoodsReducer),
     StoreModule.forFeature('authState', AuthReducer),
