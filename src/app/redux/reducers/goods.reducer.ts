@@ -63,6 +63,18 @@ const reducer = createReducer(
   on(
     GoodsActions.setCurrentProduct,
     (state, { currentProduct }): IGoodsState => ({ ...state, currentProduct })
+  ),
+  on(
+    GoodsActions.fetchProducts,
+    (state): IGoodsState => ({ ...state, loading: true })
+  ),
+  on(
+    GoodsActions.fetchProductsSuccessfull,
+    (state, { goods }): IGoodsState => ({ ...state, goods })
+  ),
+  on(
+    GoodsActions.fetchProductsFailed,
+    (state, { error }): IGoodsState => ({ ...state, error })
   )
 );
 

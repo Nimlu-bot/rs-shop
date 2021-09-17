@@ -33,16 +33,22 @@ export const fromFavorite = createAction(
   '[GOODS ] From FAVORITE',
   props<{ product: Iproduct }>()
 );
-
-// export const toCart = createAction(
-//   '[GOODS ] TO CART',
-//   props<{ product: Iproduct }>()
-// );
-// export const fromCart = createAction(
-//   '[GOODS ] From CART',
-//   props<{ product: Iproduct }>()
-// );
 export const setCurrentProduct = createAction(
   '[GOODS ] SET CURRENT PRODUCT',
   props<{ currentProduct: Iproduct }>()
+);
+
+export const fetchProducts = createAction(
+  '[GOODS ] FETCH PRODUCTS',
+  props<{ serchString: string }>()
+);
+
+export const fetchProductsSuccessfull = createAction(
+  '[GOODS EFFECT] SET FETCHED PRODUCTS',
+  props<{ goods: Iproduct [] }>()
+);
+
+export const fetchProductsFailed = createAction(
+  '[GOODS EFFECT] FETCH PRODUCTS WAS FAILED',
+  props<{ error: Error }>()
 );

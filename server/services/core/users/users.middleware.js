@@ -53,9 +53,9 @@ function handleAddingToLists(server, listName, isAdding, req, res) {
           : user
       ),
     });
-    res.send(200);
+    return res.status(200);
   } else {
-    res.status(400);
+    return res.status(400);
   }
 }
 
@@ -306,6 +306,7 @@ module.exports = (server) => {
   */
   router.post('/users/favorites', (req, res) => {
     handleAddingToLists(server, 'favorites', true, req, res);
+    res.end();
   });
 
   /**
@@ -330,6 +331,7 @@ module.exports = (server) => {
   */
   router.delete('/users/favorites', (req, res) => {
     handleAddingToLists(server, 'favorites', false, req, res);
+    res.end();
   });
 
   /**
@@ -357,6 +359,7 @@ module.exports = (server) => {
   */  
   router.post('/users/cart', (req, res) => {
     handleAddingToLists(server, 'cart', true, req, res);
+    res.end();
   });
 
   /**
@@ -381,6 +384,7 @@ module.exports = (server) => {
   */
   router.delete('/users/cart', (req, res) => {
     handleAddingToLists(server, 'cart', false, req, res);
+    res.end();
   });
 
   /**
@@ -435,7 +439,7 @@ module.exports = (server) => {
     });
 
     reduceAvailableCount(server, body.items);
-    res.send(200);
+    return res.sendStatus(200);
   });
 
   /**
@@ -482,7 +486,7 @@ module.exports = (server) => {
       ),
     });
 
-    res.send(200);
+    return res.sendStatus(200);
   });
 
   /**
@@ -525,7 +529,7 @@ module.exports = (server) => {
       ),
     });
 
-    res.send(204);
+    res.status(204);
   });
 
   return router;

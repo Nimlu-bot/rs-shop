@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { InterfaceService } from './core/services/interface.service';
 import { selectLogin } from './redux/selectors/front.selector';
 
 @Component({
@@ -15,9 +16,16 @@ export class AppComponent implements OnInit {
 
   showLogin!: Observable<boolean>;
 
-  constructor(private store: Store) {}
+  constructor(
+    private store: Store,
+    private interfaceService: InterfaceService
+  ) {}
 
   ngOnInit(): void {
     this.showLogin = this.store.select(selectLogin);
+  }
+
+  closeAll() {
+    this.interfaceService.closeAll();
   }
 }

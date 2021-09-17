@@ -1,0 +1,22 @@
+<div class="search-wrapper">
+  <div
+    class="category"
+    *ngFor="let category of categories"
+    (click)="toCategory(category)"
+  >
+    {{ category.name }}
+  </div>
+  <div
+    class="product"
+    *ngFor="let product of goods"
+    (click)="toDetail(product)"
+  >
+    <div class="photo">
+      <div class="img-wrapper">
+        <img src="{{ product.imageUrls[0] }}" alt="Description" />
+      </div>
+    </div>
+    <div class="title">{{ product.name }}</div>
+    <div class="price">{{ product.price }} р.</div>
+  </div>
+</div>

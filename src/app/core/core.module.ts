@@ -19,6 +19,7 @@ import { LoginComponent } from './components/header/navigation/login/login.compo
 import { FrontReducer } from '../redux/reducers/front.reducer';
 import { ModalComponent } from './components/modal/modal.component';
 import { AuthReducer } from '../redux/reducers/auth.reducer';
+import { SearchComponent } from './components/header/navigation/search/search.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AuthReducer } from '../redux/reducers/auth.reducer';
     MoreContactsComponent,
     LoginComponent,
     ModalComponent,
+    SearchComponent,
   ],
   imports: [
     CommonModule,

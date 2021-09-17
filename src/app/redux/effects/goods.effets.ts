@@ -8,6 +8,9 @@ import {
   getGoods,
   getGoodsSuccessfull,
   getGoodsFailed,
+  fetchProducts,
+  fetchProductsSuccessfull,
+  fetchProductsFailed,
 } from '../actions/goods.actions';
 
 @Injectable({ providedIn: 'any' })
@@ -27,6 +30,21 @@ export class GoodsEffects {
         this.categoriesService.getGoods(category, subCategory).pipe(
           map((goods) => getGoodsSuccessfull({ goods })),
           catchError((error) => of(getGoodsFailed({ error })))
+        )
+      )
+    )
+  );
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  fetchProducts: Observable<Action> = createEffect(() =>
+    // eslint-disable-next-line ngrx/prefer-effect-callback-in-block-statement
+    this.actions.pipe(
+      ofType(fetchProducts),
+      // tap(() => console.log('hi')),
+      switchMap(({ serchString }) =>
+        this.categoriesService.fetchProducts(serchString).pipe(
+          map((goods) => fetchProductsSuccessfull({ goods })),
+          catchError((error) => of(fetchProductsFailed({ error })))
         )
       )
     )

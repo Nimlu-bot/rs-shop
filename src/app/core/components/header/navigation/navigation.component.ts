@@ -1,10 +1,25 @@
-import { Component } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { fromEvent, Observable } from 'rxjs';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  filter,
+  pluck,
+} from 'rxjs/operators';
 import { ROUT } from 'src/app/core/constants/constants';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { CategoriesService } from 'src/app/core/services/categories.service';
+import { InterfaceService } from 'src/app/core/services/interface.service';
 import { toggleLogin } from 'src/app/redux/actions/front.actions';
+import { fetchProducts } from 'src/app/redux/actions/goods.actions';
 import { selectAuth } from 'src/app/redux/selectors/auth.selector';
 import { selectLogin } from 'src/app/redux/selectors/front.selector';
 
@@ -13,7 +28,7 @@ import { selectLogin } from 'src/app/redux/selectors/front.selector';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
 })
-export class NavigationComponent {
+export class NavigationComponent implements AfterViewInit, OnInit {
   showProfile = false;
 
   showLogin!: Observable<boolean>;
@@ -22,15 +37,38 @@ export class NavigationComponent {
 
   center = 'center';
 
+  showChild!: Observable<boolean>;
+
+  @ViewChild('search') search!: ElementRef;
+
   constructor(
     private store: Store,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private categoriesService: CategoriesService,
+    private interfaceService: InterfaceService
   ) {}
 
   ngOnInit(): void {
     this.showLogin = this.store.select(selectLogin);
     this.isLogin = this.store.select(selectAuth);
+    this.showChild = this.interfaceService.isSearchOpen$;
+  }
+
+  ngAfterViewInit() {
+    if (this.search)
+      fromEvent(this.search.nativeElement, 'input')
+        .pipe(
+          debounceTime(700),
+          distinctUntilChanged(),
+          pluck('target', 'value'),
+          filter<string>((value) => value.length > 2)
+        )
+        .subscribe((serchString) => {
+          this.store.dispatch(fetchProducts({ serchString }));
+          this.categoriesService.findCategories(serchString);
+          this.interfaceService.openSearch();
+        });
   }
 
   toCategories() {

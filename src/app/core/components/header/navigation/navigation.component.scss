@@ -19,6 +19,14 @@
   background-image: url("../../../../../assets/logo.png");
 }
 
+.cat-image {
+  height: 20px;
+  width: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../../../../assets/circle.png");
+}
+
 .catalog {
   display: flex;
   align-items: center;
@@ -29,17 +37,39 @@
   margin: 0 10px;
   border-radius: 80px;
   font-family: $alter-font-family;
+  background-color: #ffffff;
+  padding: 3px;
+  font-size: 14px;
 }
 
-.serch {
+.search {
   display: flex;
+  position: relative;
   align-items: center;
-  height: 42px;
-  min-width: 200px;
-  border: $button-border;
-  margin: 0 10px;
-  border-radius: 80px;
+  flex-direction: column;
 }
+
+.search-input {
+  height: 42px;
+  min-width: 396px;
+  border: $button-border;
+  border-radius: 80px;
+
+  font-family: $alter-font-family;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 14px;
+  padding: 0 10px;
+
+  outline: none;
+}
+
+// .search-result {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// }
 
 .profile,
 .cart {
@@ -55,19 +85,27 @@
   font-family: $alter-font-family;
   border: $button-border;
   margin-right: 10px;
+  font-size: 14px;
 }
 
-.profile-text {
-  &::before {
-    content: "";
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    background-image: url("../../../../../assets/accaunt.svg");
-    width: 20px;
-    height: 20px;
-  }
+.profile-image {
+  background-image: url("../../../../../assets/accaunt.svg");
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
 }
+
+// .profile-text {
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     left: 10px;
+//     top: 10px;
+//     background-image: url("../../../../../assets/accaunt.svg");
+//     width: 20px;
+//     height: 20px;
+//   }
+// }
 
 .ul {
   display: flex;
