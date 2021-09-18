@@ -1,0 +1,26 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 510px;
+}
+
+.message {
+  margin-top: 40px;
+  justify-self: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.btn {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 31px;
+  background: #ea1653;
+  width: 120px;
+  color: #ffffff;
+  margin-left: auto;
+}

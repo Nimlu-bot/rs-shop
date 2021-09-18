@@ -57,6 +57,5 @@ export class MainComponent implements OnInit {
     );
 
     this.router.navigate([ROUT.DETAIL]);
-    console.log(event);
   }
 }

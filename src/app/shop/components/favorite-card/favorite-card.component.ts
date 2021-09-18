@@ -30,7 +30,8 @@ export class FavoriteCardComponent implements OnInit {
     });
   }
 
-  fromFavorite() {
+  fromFavorite(event: MouseEvent) {
+    event.stopPropagation();
     this.store.dispatch(fromFavorite({ product: this.product }));
   }
 

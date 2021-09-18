@@ -8,7 +8,6 @@ import {
   setCurrentOrder,
 } from 'src/app/redux/actions/auth.actions';
 import { ROUT } from 'src/app/core/constants/constants';
-import { selectCurrentOrder } from 'src/app/redux/selectors/auth.selector';
 
 @Component({
   selector: 'app-wait-card',
@@ -34,11 +33,9 @@ export class WaitCardComponent implements OnInit {
   }
 
   editOrder() {
-    // eslint-disable-next-line ngrx/avoid-dispatching-multiple-actions-sequentially
     this.store.dispatch(
       editOrder({ order: JSON.parse(JSON.stringify(this.order)) })
     );
-    // eslint-disable-next-line ngrx/avoid-dispatching-multiple-actions-sequentially
     this.store.dispatch(setCurrentOrder({ products: this.order.products }));
     this.router.navigate([ROUT.EDIT]);
   }

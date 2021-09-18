@@ -10,8 +10,6 @@ import { DetailComponent } from './pages/detail/detail.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { WaitListComponent } from './pages/wait-list/wait-list.component';
 import { CategoriesReducer } from '../redux/reducers/categories.reducer';
-import { SliderComponent } from './components/slider/slider.component';
-import { PopularComponent } from './components/popular/popular.component';
 import { GoodsComponent } from './pages/goods/goods.component';
 import { GoodsReducer } from '../redux/reducers/goods.reducer';
 import { CardComponent } from './components/card/card.component';
@@ -28,7 +26,6 @@ import { CartFormComponent } from './components/cart-form/cart-form.component';
 import { ConfirmComponent } from './components/confirm/confirm.component';
 import { WaitCardComponent } from './components/wait-card/wait-card.component';
 import { EditOrderComponent } from './components/edit-order/edit-order.component';
-import { EditCardComponent } from './components/edit-card/edit-card.component';
 
 @NgModule({
   declarations: [
@@ -36,8 +33,6 @@ import { EditCardComponent } from './components/edit-card/edit-card.component';
     DetailComponent,
     CategoryComponent,
     WaitListComponent,
-    SliderComponent,
-    PopularComponent,
     GoodsComponent,
     CardComponent,
     AppStarsDirective,
@@ -52,7 +47,6 @@ import { EditCardComponent } from './components/edit-card/edit-card.component';
     ConfirmComponent,
     WaitCardComponent,
     EditOrderComponent,
-    EditCardComponent,
   ],
   imports: [
     CommonModule,

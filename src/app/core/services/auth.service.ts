@@ -21,7 +21,6 @@ export class AuthService {
   logIn(data: Iauth) {
     localStorage.setItem(this.KEY, JSON.stringify(data));
     this.store.dispatch(login({ userData: data }));
-    console.log(data);
   }
 
   logOut() {
@@ -31,8 +30,6 @@ export class AuthService {
 
   checkLogin() {
     const userData = JSON.parse(localStorage.getItem(this.KEY)!);
-    console.log(userData);
-    // this.store.dispatch(login({ userData }));
     if (userData) {
       this.store.dispatch(login({ userData }));
       return of(JSON.parse(localStorage.getItem(this.KEY)!));

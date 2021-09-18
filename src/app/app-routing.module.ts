@@ -9,6 +9,7 @@ import { GoodsComponent } from './shop/pages/goods/goods.component';
 import { DetailComponent } from './shop/pages/detail/detail.component';
 import { CartComponent } from './shop/pages/cart/cart.component';
 import { EditOrderComponent } from './shop/components/edit-order/edit-order.component';
+import { NotFoundComponent } from './core/pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: ROUT.ROOT, component: MainComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: ROUT.DETAIL, component: DetailComponent },
   { path: ROUT.CART, component: CartComponent },
   { path: ROUT.EDIT, component: EditOrderComponent },
+  { path: ROUT.NOTFOUND, component: NotFoundComponent },
 ];
 
 @NgModule({

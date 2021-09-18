@@ -94,6 +94,5 @@ export class DetailComponent implements OnInit {
 
   toCart() {
     this.store.dispatch(toCart({ product: this.product }));
-    console.log(this.product);
   }
 }

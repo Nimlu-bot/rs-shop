@@ -20,6 +20,7 @@ import { FrontReducer } from '../redux/reducers/front.reducer';
 import { ModalComponent } from './components/modal/modal.component';
 import { AuthReducer } from '../redux/reducers/auth.reducer';
 import { SearchComponent } from './components/header/navigation/serch/search.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { SearchComponent } from './components/header/navigation/serch/search.com
     LoginComponent,
     ModalComponent,
     SearchComponent,
+    NotFoundComponent,
   ],
   imports: [
     CommonModule,

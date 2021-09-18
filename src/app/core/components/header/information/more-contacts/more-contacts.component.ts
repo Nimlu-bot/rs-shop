@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-more-contacts',
   templateUrl: './more-contacts.component.html',
-  styleUrls: ['./more-contacts.component.scss']
+  styleUrls: ['./more-contacts.component.scss'],
 })
-export class MoreContactsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class MoreContactsComponent {}

@@ -1,6 +1,10 @@
 <div class="photo" (click)="toDetail()">
   <div class="img-wrapper">
-    <img src="{{ product.imageUrls[0] }}" alt="Description" />
+    <img
+      class="img-wrapper"
+      src="{{ product.imageUrls[0] }}"
+      alt="Description"
+    />
   </div>
 </div>
 <div class="title" (click)="toDetail()">{{ product.name }}</div>

@@ -12,7 +12,12 @@
   <input class="search-input" type="text" placeholder="Поиск товаров" #search />
   <app-search class="search-result" *ngIf="showChild | async"></app-search>
 </div>
-<div ngDropdown [renderInPlace]="true" horizontalPosition="center">
+<div
+  ngDropdown
+  [renderInPlace]="true"
+  horizontalPosition="center"
+  #dropdown="ngDropdown"
+>
   <button ngDropdownControl class="profile">
     <div class="profile-image"></div>
     <span class="profile-text">Аккаунт</span>

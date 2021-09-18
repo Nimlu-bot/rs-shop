@@ -47,7 +47,6 @@ export class SearchComponent implements OnInit {
     if (category.hasOwnProperty('subCategories')) {
       this.store.dispatch(setCategory({ categoryId: category.id }));
       this.router.navigate([ROUT.CATEGORIES]);
-      console.log('1');
     } else {
       const parentCategory: Icategory | null =
         this.categoriesService.findCategory(category.id);
@@ -62,7 +61,6 @@ export class SearchComponent implements OnInit {
           getGoods({ category: parentCategory.id, subCategory: category.id })
         );
         this.router.navigate([ROUT.GOODS]);
-        // console.log(categoryId);
       }
     }
   }

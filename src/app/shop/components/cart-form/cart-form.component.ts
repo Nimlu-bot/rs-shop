@@ -4,11 +4,9 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { IMyDpOptions } from 'mydatepicker';
 import { v4 as uuid } from 'uuid';
-import { ROUT } from 'src/app/core/constants/constants';
 import { IcartProduct } from 'src/app/core/constants/models';
 import { selectCurrentOrder } from 'src/app/redux/selectors/auth.selector';
 import {
-  clearCurrentOrder,
   createOrder,
 } from 'src/app/redux/actions/auth.actions';
 import { InterfaceService } from 'src/app/core/services/interface.service';
