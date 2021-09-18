@@ -7,7 +7,7 @@
     <div class="price">{{ price }}</div>
   </div>
   <app-cart-form></app-cart-form>
-  <app-confirm></app-confirm>
+  <app-confirm *ngIf="isConfirm$ | async"></app-confirm>
 </div>
 <div class="no-product" *ngIf="!products.length">
   <p class="message">В корзине ничего нет</p>

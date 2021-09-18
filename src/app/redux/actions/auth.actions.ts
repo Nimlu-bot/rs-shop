@@ -35,4 +35,8 @@ export const createOrder = createAction(
   '[USER] CREATE ORDER',
   props<{ order: IdeliveryInfo }>()
 );
+export const deleteOrder = createAction(
+  '[USER] DELETE ORDER',
+  props<{ orderId: string }>()
+);
 export const clearCurrentOrder = createAction('[USER] CLEAR CURRENT ORDER');

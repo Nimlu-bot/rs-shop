@@ -8,7 +8,6 @@ import {
   IsubCategory,
 } from 'src/app/core/constants/models';
 import { CategoriesService } from 'src/app/core/services/categories.service';
-import { InterfaceService } from 'src/app/core/services/interface.service';
 import {
   setCategory,
   setCategoryAndSubCategory,
@@ -27,7 +26,6 @@ export class SearchComponent implements OnInit {
   categories!: Icategory[] | IsubCategory[];
 
   constructor(
-    private interfaceService: InterfaceService,
     private store: Store,
     private categoriesService: CategoriesService,
     private router: Router

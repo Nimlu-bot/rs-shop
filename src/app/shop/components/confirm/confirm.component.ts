@@ -5,6 +5,7 @@ import { IdeliveryInfo, Iproduct } from 'src/app/core/constants/models';
 import { selectOrders } from 'src/app/redux/selectors/auth.selector';
 import { ROUT } from 'src/app/core/constants/constants';
 import { clearCurrentOrder } from 'src/app/redux/actions/auth.actions';
+import { InterfaceService } from 'src/app/core/services/interface.service';
 import { selectCurrentOrder } from '../../../redux/selectors/auth.selector';
 
 @Component({
@@ -17,7 +18,11 @@ export class ConfirmComponent implements OnInit {
 
   currentOrder!: Iproduct[];
 
-  constructor(private router: Router, private store: Store) {}
+  constructor(
+    private router: Router,
+    private store: Store,
+    private interfaceService: InterfaceService
+  ) {}
 
   ngOnInit(): void {
     this.store.select(selectOrders).subscribe((orders) => {
@@ -30,6 +35,7 @@ export class ConfirmComponent implements OnInit {
 
   toMain() {
     this.store.dispatch(clearCurrentOrder());
+    this.interfaceService.coloseConfirm();
     this.router.navigate([ROUT.ROOT]);
   }
 }

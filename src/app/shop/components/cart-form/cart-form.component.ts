@@ -11,6 +11,7 @@ import {
   clearCurrentOrder,
   createOrder,
 } from 'src/app/redux/actions/auth.actions';
+import { InterfaceService } from 'src/app/core/services/interface.service';
 
 @Component({
   selector: 'app-cart-form',
@@ -32,7 +33,11 @@ export class CartFormComponent implements OnInit {
     dateFormat: 'dd.mm.yyyy',
   };
 
-  constructor(private router: Router, private store: Store) {
+  constructor(
+    private router: Router,
+    private store: Store,
+    private interfaceService: InterfaceService
+  ) {
     this.cartForm = new FormGroup({
       name: new FormControl('', [
         Validators.required,
@@ -77,5 +82,6 @@ export class CartFormComponent implements OnInit {
         },
       })
     );
+    this.interfaceService.openConfirm();
   }
 }

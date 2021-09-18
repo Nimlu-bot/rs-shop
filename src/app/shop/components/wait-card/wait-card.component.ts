@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { IdeliveryInfo } from 'src/app/core/constants/models';
+import { deleteOrder } from 'src/app/redux/actions/auth.actions';
 
 @Component({
   selector: 'app-wait-card',
@@ -11,12 +13,16 @@ export class WaitCardComponent implements OnInit {
 
   price = 0;
 
-  constructor() {}
+  constructor(private store: Store) {}
 
   ngOnInit(): void {
     this.price = this.order.products.reduce(
       (acc, b) => acc + (b.amount || 1) * b.price,
       0
     );
+  }
+
+  deleteOrder() {
+    this.store.dispatch(deleteOrder({ orderId: this.order.id }));
   }
 }

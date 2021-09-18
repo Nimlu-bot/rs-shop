@@ -73,15 +73,25 @@ const reducer = createReducer(
     });
     return { ...state, currentOrder: newOrder };
   }),
-  on(AuthActions.createOrder, (state, { order }): IAuthState => {
-    const products = state.orders;
-    return { ...state, orders: [...state.orders, order] };
-  }),
+  on(
+    AuthActions.createOrder,
+    (state, { order }): IAuthState => ({
+      ...state,
+      orders: [...state.orders, order],
+    })
+  ),
   on(
     AuthActions.clearCurrentOrder,
     (state): IAuthState => ({
       ...state,
       currentOrder: [],
+    })
+  ),
+  on(
+    AuthActions.deleteOrder,
+    (state, { orderId }): IAuthState => ({
+      ...state,
+      orders: state.orders.filter((order) => order.id !== orderId),
     })
   )
 );
