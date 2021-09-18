@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import {
   Iproduct,
@@ -24,7 +24,9 @@ import { selectGoods } from 'src/app/redux/selectors/goods.selector';
   styleUrls: ['./goods.component.scss'],
 })
 export class GoodsComponent implements OnInit, OnDestroy {
-  goods!: Observable<Iproduct[]>;
+  goods!: Iproduct[];
+
+  goodsToShow: Iproduct[] = [];
 
   categoryId!: string;
 
@@ -38,12 +40,17 @@ export class GoodsComponent implements OnInit, OnDestroy {
 
   filter: IsortParams | undefined;
 
+  showNumber = 10;
+
   private destroyed$ = new Subject<void>();
 
   constructor(private filterService: FilterService, private store: Store) {}
 
   ngOnInit(): void {
-    this.goods = this.store.select(selectGoods);
+    this.store.select(selectGoods).subscribe((goods) => {
+      this.goods = goods;
+      this.goodsToShow = this.goods.slice(0, this.showNumber);
+    });
     this.store.select(selectCurrentCategory).subscribe((category) => {
       this.categoryId = category;
     });
@@ -72,6 +79,11 @@ export class GoodsComponent implements OnInit, OnDestroy {
       .subscribe((filter) => {
         this.filter = filter;
       });
+  }
+
+  showMore() {
+    this.showNumber += 10;
+    this.goodsToShow = this.goods.slice(0, this.showNumber);
   }
 
   ngOnDestroy() {

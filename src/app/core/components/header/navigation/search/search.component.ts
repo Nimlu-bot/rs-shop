@@ -1,3 +1,4 @@
+/* eslint-disable ngrx/avoid-dispatching-multiple-actions-sequentially */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -12,7 +13,10 @@ import {
   setCategory,
   setCategoryAndSubCategory,
 } from 'src/app/redux/actions/category.actions';
-import { getGoods } from 'src/app/redux/actions/goods.actions';
+import {
+  getGoods,
+  setCurrentProduct,
+} from 'src/app/redux/actions/goods.actions';
 import { selectGoods } from 'src/app/redux/selectors/goods.selector';
 
 @Component({
@@ -48,14 +52,12 @@ export class SearchComponent implements OnInit {
       const parentCategory: Icategory | null =
         this.categoriesService.findCategory(category.id);
       if (parentCategory) {
-        // eslint-disable-next-line ngrx/avoid-dispatching-multiple-actions-sequentially
         this.store.dispatch(
           setCategoryAndSubCategory({
             category: parentCategory.id,
             subCategory: category.id,
           })
         );
-        // eslint-disable-next-line ngrx/avoid-dispatching-multiple-actions-sequentially
         this.store.dispatch(
           getGoods({ category: parentCategory.id, subCategory: category.id })
         );
@@ -66,6 +68,14 @@ export class SearchComponent implements OnInit {
   }
 
   toDetail(product: Iproduct) {
-    console.log(product);
+    this.store.dispatch(
+      setCategoryAndSubCategory({
+        category: product.category!,
+        subCategory: product.subCategory!,
+      })
+    );
+    this.store.dispatch(setCurrentProduct({ currentProduct: product }));
+    this.router.navigate([ROUT.DETAIL]);
+
   }
 }

@@ -2,11 +2,8 @@
 <div class="title">{{ subCategory.name }}</div>
 <app-sort></app-sort>
 <div class="goods-wrapper">
-  <div
-    class="product"
-    *ngFor="let product of goods | async | sortOrder: filter"
-  >
+  <div class="product" *ngFor="let product of goodsToShow | sortOrder: filter">
     <app-card [productId]="product.id"></app-card>
   </div>
 </div>
-<button class="more">Показать больше</button>
+<button class="more" (click)="showMore()">Показать больше</button>
