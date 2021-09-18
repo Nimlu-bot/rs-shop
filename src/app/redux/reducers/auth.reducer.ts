@@ -1,5 +1,6 @@
 import { createReducer, on, Action } from '@ngrx/store';
 
+import { DeliveryInfo } from 'src/app/core/constants/models';
 import * as AuthActions from '../actions/auth.actions';
 
 import { IAuthState, initialAuthState } from '../state/auth.state.model';
@@ -92,6 +93,30 @@ const reducer = createReducer(
     (state, { orderId }): IAuthState => ({
       ...state,
       orders: state.orders.filter((order) => order.id !== orderId),
+    })
+  ),
+  on(
+    AuthActions.editOrder,
+    (state, { order }): IAuthState => ({
+      ...state,
+      orderToEdit: order,
+    })
+  ),
+  on(
+    AuthActions.confirmEditOrder,
+    (state, { order }): IAuthState => ({
+      ...state,
+      orderToEdit: JSON.parse(JSON.stringify(new DeliveryInfo())),
+      orders: state.orders.map((item) =>
+        item.id === order.id ? { ...order } : item
+      ),
+    })
+  ),
+  on(
+    AuthActions.setCurrentOrder,
+    (state, { products }): IAuthState => ({
+      ...state,
+      currentOrder: products,
     })
   )
 );

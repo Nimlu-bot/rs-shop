@@ -1,4 +1,5 @@
 import {
+  DeliveryInfo,
   Iauth,
   IcartProduct,
   IdeliveryInfo,
@@ -11,6 +12,7 @@ export interface IAuthState {
   currentOrder: IcartProduct[];
   orders: IdeliveryInfo[];
   favorite: Iproduct[];
+  orderToEdit: IdeliveryInfo;
 }
 export const initialAuthState: IAuthState = {
   isLogin: false,
@@ -18,4 +20,5 @@ export const initialAuthState: IAuthState = {
   currentOrder: [],
   orders: [],
   favorite: [],
+  orderToEdit: JSON.parse(JSON.stringify(new DeliveryInfo())),
 };

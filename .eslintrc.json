@@ -37,7 +37,8 @@
         "import/prefer-default-export": "off",
         "class-methods-use-this": "off",
         "ngrx/no-store-subscription": "off",
-        "max-classes-per-file": "off"
+        "max-classes-per-file": "off",
+        "ngrx/avoid-dispatching-multiple-actions-sequentially": "off"
       },
       "plugins": ["ngrx"]
     },

@@ -1,5 +1,10 @@
 import { createAction, props } from '@ngrx/store';
-import { Iauth, IdeliveryInfo, Iproduct } from 'src/app/core/constants/models';
+import {
+  Iauth,
+  IdeliveryInfo,
+  Iproduct,
+  IcartProduct,
+} from 'src/app/core/constants/models';
 
 export const login = createAction(
   '[LOGIN] LOGIN',
@@ -39,4 +44,18 @@ export const deleteOrder = createAction(
   '[USER] DELETE ORDER',
   props<{ orderId: string }>()
 );
+export const editOrder = createAction(
+  '[USER] EDIT ORDER',
+  props<{ order: IdeliveryInfo }>()
+);
+export const confirmEditOrder = createAction(
+  '[USER] CONFIRM EDIT ORDER',
+  props<{ order: IdeliveryInfo }>()
+);
+
+export const setCurrentOrder = createAction(
+  '[USER] SET CURRENT ORDER',
+  props<{ products: IcartProduct[] }>()
+);
+
 export const clearCurrentOrder = createAction('[USER] CLEAR CURRENT ORDER');

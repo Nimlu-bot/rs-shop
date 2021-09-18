@@ -8,6 +8,7 @@ import { WaitListComponent } from './shop/pages/wait-list/wait-list.component';
 import { GoodsComponent } from './shop/pages/goods/goods.component';
 import { DetailComponent } from './shop/pages/detail/detail.component';
 import { CartComponent } from './shop/pages/cart/cart.component';
+import { EditOrderComponent } from './shop/components/edit-order/edit-order.component';
 
 const routes: Routes = [
   { path: ROUT.ROOT, component: MainComponent },
@@ -17,11 +18,11 @@ const routes: Routes = [
   { path: ROUT.GOODS, component: GoodsComponent },
   { path: ROUT.DETAIL, component: DetailComponent },
   { path: ROUT.CART, component: CartComponent },
+  { path: ROUT.EDIT, component: EditOrderComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-
 
   exports: [RouterModule],
 })

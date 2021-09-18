@@ -20,3 +20,7 @@ export const selectFavorite = createSelector(
   selectAuthState,
   (authState) => authState.favorite
 );
+export const selectOrderToEdit = createSelector(
+  selectAuthState,
+  (authState) => authState.orderToEdit
+);

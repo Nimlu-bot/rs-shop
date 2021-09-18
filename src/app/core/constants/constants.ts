@@ -7,6 +7,7 @@ export enum ROUT {
   GOODS = 'goods',
   DETAIL = 'detail',
   CART = 'cart',
+  EDIT = 'edit',
 }
 
 export const FIRST_STEP = 5;
