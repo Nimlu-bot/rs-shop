@@ -2,10 +2,12 @@
 
 :host {
   display: flex;
+  width: 80%;
 }
 
 .main-categories {
-  width: 200px;
+  margin-top: 40px;
+  width: 250px;
   border-right: $button-border;
 }
 
@@ -15,12 +17,19 @@
   overflow: hidden;
   white-space: nowrap;
   cursor: pointer;
-  font-size: 14px;
-  margin: 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px 0;
+
+  &:hover {
+    color: #801010;
+    transform: scale(1.01);
+  }
 }
 
 .subcategories {
   margin-left: 30px;
+  width: 50%;
 }
 
 .subcategories-title {
@@ -30,8 +39,14 @@
 }
 
 .subcategory {
-  margin: 5px 0;
+  margin: 20px 0;
   cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    color: #801010;
+    transform: scale(1.01);
+  }
 }
 
 .subcategories-wrapper {

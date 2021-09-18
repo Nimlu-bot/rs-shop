@@ -26,6 +26,8 @@ import { CartFormComponent } from './components/cart-form/cart-form.component';
 import { ConfirmComponent } from './components/confirm/confirm.component';
 import { WaitCardComponent } from './components/wait-card/wait-card.component';
 import { EditOrderComponent } from './components/edit-order/edit-order.component';
+import { BenefitsComponent } from './components/benefits/benefits.component';
+import { VideoComponent } from './components/video/video.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { EditOrderComponent } from './components/edit-order/edit-order.component
     ConfirmComponent,
     WaitCardComponent,
     EditOrderComponent,
+    BenefitsComponent,
+    VideoComponent,
   ],
   imports: [
     CommonModule,

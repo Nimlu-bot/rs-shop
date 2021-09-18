@@ -57,6 +57,10 @@ export interface Iimage {
   tile?: string;
 }
 
+export interface IipData {
+  city: { name_ru: string };
+}
+
 export class Product implements Iproduct {
   id: '';
 
