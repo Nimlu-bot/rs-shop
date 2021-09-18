@@ -7,12 +7,10 @@ import { IpService } from '../../../../services/ip.service';
   templateUrl: './location.component.html',
   styleUrls: ['./location.component.scss'],
 })
-export class LocationComponent  {
+export class LocationComponent {
   city: Observable<string>;
 
   constructor(private ipService: IpService) {
-    this.city = this.ipService.getSity();
+    this.city = this.ipService.sity$;
   }
-
-
 }

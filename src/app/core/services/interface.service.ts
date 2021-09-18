@@ -13,11 +13,17 @@ export class InterfaceService {
 
   isConfirmOpenSubject$: BehaviorSubject<boolean>;
 
+  isLogin$: Observable<boolean>;
+
+  isLoginSubject$: BehaviorSubject<boolean>;
+
   constructor() {
     this.isSearchOpenSubject$ = new BehaviorSubject<boolean>(false);
     this.isSearchOpen$ = this.isSearchOpenSubject$.asObservable();
     this.isConfirmOpenSubject$ = new BehaviorSubject<boolean>(false);
     this.isConfirmOpen$ = this.isConfirmOpenSubject$.asObservable();
+    this.isLoginSubject$ = new BehaviorSubject<boolean>(true);
+    this.isLogin$ = this.isLoginSubject$.asObservable();
   }
 
   closeAll() {
@@ -34,5 +40,9 @@ export class InterfaceService {
 
   coloseConfirm() {
     this.isConfirmOpenSubject$.next(false);
+  }
+
+  toggleLogin() {
+    this.isLoginSubject$.next(!this.isLoginSubject$.value);
   }
 }

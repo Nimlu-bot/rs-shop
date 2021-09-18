@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularDropdownModule } from 'angular-dropdown';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -21,6 +21,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { AuthReducer } from '../redux/reducers/auth.reducer';
 import { SearchComponent } from './components/header/navigation/serch/search.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { RegisterComponent } from './components/header/navigation/register/register.component';
 
 @NgModule({
   declarations: [
@@ -38,12 +39,14 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     ModalComponent,
     SearchComponent,
     NotFoundComponent,
+    RegisterComponent,
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     FormsModule,
     AngularDropdownModule,
+    ReactiveFormsModule,
     StoreModule.forFeature('categoriesState', CategoriesReducer),
     StoreModule.forFeature('frontState', FrontReducer),
     StoreModule.forFeature('authState', AuthReducer),
