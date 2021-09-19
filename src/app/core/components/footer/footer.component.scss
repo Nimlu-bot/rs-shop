@@ -32,4 +32,70 @@
   align-items: center;
   text-align: center;
   margin: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.item-wrapper {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.item-ico {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.viber {
+  background-image: url("../../../../assets/viber.svg");
+}
+
+.a1 {
+  background-image: url("../../../../assets/a1.svg");
+}
+
+.life {
+  background-image: url("../../../../assets/life.svg");
+}
+
+.sity {
+  background-image: url("../../../../assets/city.svg");
+}
+
+.tg {
+  background-image: url("../../../../assets/telegram.png");
+}
+
+.call {
+  background-image: url("../../../../assets/call.svg");
+}
+
+.mail {
+  background-image: url("../../../../assets/mail.svg");
+}
+
+.write {
+  background-image: url("../../../../assets/write.svg");
+}
+
+.vk {
+  background-image: url("../../../../assets/vk.png");
+}
+
+.fb {
+  background-image: url("../../../../assets/facebook.png");
+}
+
+.insta {
+  background-image: url("../../../../assets/instagram.png");
+}
+
+.youtube {
+  background-image: url("../../../../assets/youtube.png");
+}
+
+.ok {
+  background-image: url("../../../../assets/ok.png");
 }

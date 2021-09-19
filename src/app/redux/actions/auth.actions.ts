@@ -1,14 +1,14 @@
 import { createAction, props } from '@ngrx/store';
 import {
-  Iauth,
   IdeliveryInfo,
   Iproduct,
   IcartProduct,
+  IstoredData,
 } from 'src/app/core/constants/models';
 
 export const login = createAction(
   '[LOGIN] LOGIN',
-  props<{ userData: Iauth }>()
+  props<{ userData: IstoredData }>()
 );
 export const logout = createAction('[LOGIN] LOGOUT');
 export const checkLogin = createAction('[LOGIN] CHECKLOGIN');

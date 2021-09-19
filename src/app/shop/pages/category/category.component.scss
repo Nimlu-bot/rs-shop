@@ -54,3 +54,36 @@
   column-count: 2;
   column-gap: 4%;
 }
+
+.category-wrapper {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.category-image {
+  width: 24px;
+  height: 24px;
+  margin: 0 5px;
+}
+
+
+.appliances {
+  background-image: url("../../../../assets/appliances.svg");
+}
+
+.electronics {
+  background-image: url("../../../../assets/electronics.svg");
+}
+
+.computers-peripherals {
+  background-image: url("../../../../assets/computers-peripherals.svg");
+}
+
+.furniture {
+  background-image: url("../../../../assets/furniture.svg");
+}
+
+.hobbies {
+  background-image: url("../../../../assets/hobbies.svg");
+}

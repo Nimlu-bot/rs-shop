@@ -30,8 +30,13 @@ export class LoginComponent implements OnInit {
   }
 
   submit(form: NgForm) {
-    this.authService.logIn(form.value);
-    this.store.dispatch(toggleLogin());
+    this.authService.logIn(form.value).subscribe((data) => {
+      if (data.token) {
+        this.store.dispatch(toggleLogin());
+      }
+    });
+    // this.authService.logIn(form.value);
+    // this.store.dispatch(toggleLogin());
     // console.log(form.value);
   }
 

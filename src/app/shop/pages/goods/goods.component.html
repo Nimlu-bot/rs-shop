@@ -6,4 +6,6 @@
     <app-card [productId]="product.id"></app-card>
   </div>
 </div>
-<button class="more" (click)="showMore()">Показать больше</button>
+<button class="more" (click)="showMore()" *ngIf="goods.length > showNumber">
+  Показать больше
+</button>

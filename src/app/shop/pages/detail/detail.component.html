@@ -22,7 +22,7 @@
 <div class="buttons-wrapper">
   <button
     class="button to-cart"
-    [disabled]="product.isInCart || product.availableAmount < 1"
+    [disabled]="isInCart || product.availableAmount < 1"
     (click)="toCart()"
   >
     В корзину

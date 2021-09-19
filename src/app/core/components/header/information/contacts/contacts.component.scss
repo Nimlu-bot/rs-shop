@@ -75,3 +75,39 @@
   cursor: pointer;
   background-color: #ffffff;
 }
+
+.item-wrapper {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.item-ico {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.life {
+  background-image: url("../../../../../../assets/life.svg");
+}
+
+.sity {
+  background-image: url("../../../../../../assets/city.svg");
+}
+
+.tg {
+  background-image: url("../../../../../../assets/telegram.png");
+}
+
+.call {
+  background-image: url("../../../../../../assets/call.svg");
+}
+
+.mail {
+  background-image: url("../../../../../../assets/mail.svg");
+}
+
+.write {
+  background-image: url("../../../../../../assets/write.svg");
+}

@@ -1,14 +1,14 @@
 import {
   DeliveryInfo,
-  Iauth,
   IcartProduct,
   IdeliveryInfo,
   Iproduct,
+  IstoredData,
 } from 'src/app/core/constants/models';
 
 export interface IAuthState {
   isLogin: boolean;
-  userData: Iauth;
+  userData: IstoredData;
   currentOrder: IcartProduct[];
   orders: IdeliveryInfo[];
   favorite: Iproduct[];
@@ -16,7 +16,7 @@ export interface IAuthState {
 }
 export const initialAuthState: IAuthState = {
   isLogin: false,
-  userData: { email: '', password: '' },
+  userData: { email: '', token: '' },
   currentOrder: [],
   orders: [],
   favorite: [],

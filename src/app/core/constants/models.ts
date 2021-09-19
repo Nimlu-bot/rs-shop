@@ -9,11 +9,6 @@ export interface IsubCategory {
   name: string;
 }
 
-export interface Iauth {
-  email: string;
-  password: string;
-}
-
 export interface Iproduct {
   id: string;
   name: string;
@@ -59,6 +54,25 @@ export interface Iimage {
 
 export interface IipData {
   city: { name_ru: string };
+}
+export interface IregistrationData {
+  name: string;
+  surname: string;
+  email: string;
+  password: string;
+}
+
+export interface ILoginData {
+  email: string;
+  password: string;
+}
+export interface Itoken {
+  token: string;
+}
+
+export interface IstoredData {
+  email: string;
+  token: string;
 }
 
 export class Product implements Iproduct {

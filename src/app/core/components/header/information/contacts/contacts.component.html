@@ -86,17 +86,43 @@
     <ul class="ul">
       <li class="dd-item"></li>
       <li class="dd-item">
-        <div class="more-item" value="life">life phone</div>
+        <div class="item-wrapper" (click)="toLink()">
+          <div class="item-ico life"></div>
+          <div class="more-item" value="life">+375 25 555-55-55</div>
+        </div>
       </li>
-      <li class="dd-item"><div class="more-item" value="sity">sity</div></li>
-      <li class="dd-item"><div class="more-item" value="tg">tg</div></li>
-      <li class="dd-item"><div class="more-item" value="mail">mail</div></li>
       <li class="dd-item">
-        <div class="more-item" value="back-phone">back-phone</div>
+        <div class="item-wrapper" (click)="toLink()">
+          <div class="item-ico sity"></div>
+          <div class="more-item" value="sity">+375 17 555-55-55</div>
+        </div>
       </li>
-      <li class="dd-item"><div class="more-item" value="write">write</div></li>
       <li class="dd-item">
-        <div class="more-item" value="contacts">контакты</div>
+        <div class="item-wrapper" (click)="toLink()">
+          <div class="item-ico tg"></div>
+          <div class="more-item" value="tg">@shop</div>
+        </div>
+      </li>
+      <li class="dd-item">
+        <div class="item-wrapper" (click)="toLink()">
+          <div class="item-ico mail"></div>
+          <div class="more-item" value="mail">shop@shop.shop</div>
+        </div>
+      </li>
+      <li class="dd-item">
+        <div class="item-wrapper" (click)="toLink()">
+          <div class="item-ico call"></div>
+          <div class="more-item" value="back-phone">Заказать звонок</div>
+        </div>
+      </li>
+      <li class="dd-item">
+        <div class="item-wrapper" (click)="toLink()">
+          <div class="item-ico write"></div>
+          <div class="more-item" value="write">Написать нам</div>
+        </div>
+      </li>
+      <li class="dd-item" (click)="toLink()">
+        <div class="more-item" value="contacts">Контакты</div>
       </li>
     </ul>
   </div>

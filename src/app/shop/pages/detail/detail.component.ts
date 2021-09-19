@@ -11,6 +11,7 @@ import {
 } from 'src/app/core/constants/models';
 import { toCart } from 'src/app/redux/actions/auth.actions';
 import { toggleFavorite } from 'src/app/redux/actions/goods.actions';
+import { selectCurrentOrder } from 'src/app/redux/selectors/auth.selector';
 import {
   selectCategories,
   selectCurrentCategory,
@@ -41,6 +42,8 @@ export class DetailComponent implements OnInit {
 
   imageObject: Iimage[] = [];
 
+  isInCart!: boolean;
+
   @Input() currentImage = '';
 
   constructor(private store: Store) {}
@@ -63,6 +66,9 @@ export class DetailComponent implements OnInit {
     });
     this.store.select(selectCategories).subscribe((categories) => {
       this.categories = categories;
+    });
+    this.store.select(selectCurrentOrder).subscribe((items) => {
+      this.isInCart = !!items.find((item) => item.id === this.product.id);
     });
 
     if (this.categories.length) {

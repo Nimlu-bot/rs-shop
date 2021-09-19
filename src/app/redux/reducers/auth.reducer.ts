@@ -15,7 +15,14 @@ const reducer = createReducer(
       userData,
     })
   ),
-  on(AuthActions.logout, (state): IAuthState => ({ ...state, isLogin: false })),
+  on(
+    AuthActions.logout,
+    (state): IAuthState => ({
+      ...state,
+      isLogin: false,
+      userData: { email: '', token: '' },
+    })
+  ),
   on(AuthActions.checkLogin, (state): IAuthState => ({ ...state })),
   on(
     AuthActions.toFavorite,
@@ -34,8 +41,6 @@ const reducer = createReducer(
   on(
     AuthActions.toCart,
     (state, { product }): IAuthState =>
-      // const newOrderProducts = [...state.currentOrder.products, product];
-      // const newOrder = { ...state.currentOrder, products: newOrderProducts };
       ({
         ...state,
         currentOrder: state.currentOrder.concat({ ...product, amount: 1 }),
@@ -49,15 +54,6 @@ const reducer = createReducer(
     };
   }),
   on(AuthActions.increaseAmount, (state, { product }): IAuthState => {
-    // const currentProduct = state.currentOrder.filter(
-    //   (item) => item.id === product.id
-    // )[0];
-    // const otherProducts = state.currentOrder.filter(
-    //   (item) => item.id !== product.id
-    // );
-    // const newAmount = currentProduct.amount ? currentProduct.amount + 1 : 1;
-    // const productWithNewAmount = { ...currentProduct, amount: newAmount };
-    // const newOrder = [...otherProducts, productWithNewAmount];
     const newOrder = state.currentOrder.map((item) => {
       if (item.id !== product.id) return item;
       return { ...item, amount: item.amount ? item.amount + 1 : 1 };
