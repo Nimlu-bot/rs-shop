@@ -1,0 +1,31 @@
+
+@import "~swiper/css";
+@import "~swiper/css/pagination";
+//@import "~swiper/css/navigation";
+@import "~swiper/css/grid";
+
+
+.swiper {
+  margin-top: 40px;
+  width: 50vw;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #ffffff;
+  height: calc((100% - 30px) / 2);
+  border-radius: 5px;
+  border: 1px solid #909399;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

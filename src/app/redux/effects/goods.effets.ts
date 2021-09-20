@@ -49,4 +49,19 @@ export class GoodsEffects {
       )
     )
   );
+
+  // // eslint-disable-next-line @typescript-eslint/member-ordering
+  // getPopular: Observable<Action> = createEffect(() =>
+  //   // eslint-disable-next-line ngrx/prefer-effect-callback-in-block-statement
+  //   this.actions.pipe(
+  //     ofType(getPopular),
+  //     // tap(() => console.log('hi')),
+  //     switchMap(({ categories }) =>
+  //       this.categoriesService.getPopular(categories).pipe(
+  //         map((goods) => fetchProductsSuccessfull({ goods })),
+  //         catchError((error) => of(fetchProductsFailed({ error })))
+  //       )
+  //     )
+  //   )
+  // );
 }

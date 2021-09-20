@@ -12,3 +12,7 @@ export const selectCurrentProduct = createSelector(
   selectGoodsState,
   (goodsState) => goodsState.currentProduct
 );
+export const selectPopular = createSelector(
+  selectGoodsState,
+  (goodsState) => goodsState.popular
+);

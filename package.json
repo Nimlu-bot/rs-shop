@@ -29,6 +29,7 @@
     "ng-image-slider": "^2.8.0",
     "ng-wormhole": "^3.0.2",
     "rxjs": "~6.6.0",
+    "swiper": "^7.0.6",
     "tslib": "^2.2.0",
     "uuid": "^8.3.2",
     "zone.js": "~0.11.4"

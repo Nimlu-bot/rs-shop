@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, concat } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { selectCategories } from 'src/app/redux/selectors/caregories.selector';
 import { Icategory, Iproduct, IsubCategory } from '../constants/models';
@@ -10,6 +10,8 @@ import { Icategory, Iproduct, IsubCategory } from '../constants/models';
 })
 export class CategoriesService {
   categories!: Icategory[] | IsubCategory[];
+
+  products: Iproduct[] = [];
 
   constructor(private http: HttpClient, private store: Store) {}
 
@@ -59,5 +61,20 @@ export class CategoriesService {
     });
     if (result) return result;
     return null;
+  }
+
+  getPopular(categories: string[]) {
+    const array = categories.map(
+      (category) =>
+        this.http.get<Iproduct[]>(
+          `http://localhost:3004/goods/category/${category}`
+        )
+      // .pipe(
+      //   tap((product) =>
+      //     this.products.concat(product.filter((item) => item.rating === 5))
+      //   )
+      // )
+    );
+    return concat(...array);
   }
 }

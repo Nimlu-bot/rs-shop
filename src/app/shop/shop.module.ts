@@ -5,6 +5,7 @@ import { NgImageSliderModule } from 'ng-image-slider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyDatePickerModule } from 'mydatepicker';
 import { AngularDropdownModule } from 'angular-dropdown';
+import { SwiperModule } from 'swiper/angular';
 import { MainComponent } from './pages/main/main.component';
 import { DetailComponent } from './pages/detail/detail.component';
 import { CategoryComponent } from './pages/category/category.component';
@@ -28,6 +29,8 @@ import { WaitCardComponent } from './components/wait-card/wait-card.component';
 import { EditOrderComponent } from './components/edit-order/edit-order.component';
 import { BenefitsComponent } from './components/benefits/benefits.component';
 import { VideoComponent } from './components/video/video.component';
+import { PopularComponent } from './components/popular/popular.component';
+import { PopularCardComponent } from './components/popular-card/popular-card.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,8 @@ import { VideoComponent } from './components/video/video.component';
     EditOrderComponent,
     BenefitsComponent,
     VideoComponent,
+    PopularComponent,
+    PopularCardComponent,
   ],
   imports: [
     CommonModule,
@@ -59,6 +64,7 @@ import { VideoComponent } from './components/video/video.component';
     MyDatePickerModule,
     ReactiveFormsModule,
     AngularDropdownModule,
+    SwiperModule,
     StoreModule.forFeature('categoriesState', CategoriesReducer),
     StoreModule.forFeature('goodsState', GoodsReducer),
     StoreModule.forFeature('authState', AuthReducer),

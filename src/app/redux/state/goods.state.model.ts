@@ -6,10 +6,12 @@ export interface IGoodsState {
   loaded: boolean;
   error: Error | null;
   currentProduct?: Iproduct;
+  popular: Iproduct[];
 }
 export const initialGoodsState: IGoodsState = {
   goods: [new Product()],
   loading: false,
   loaded: false,
   error: null,
+  popular: [],
 };

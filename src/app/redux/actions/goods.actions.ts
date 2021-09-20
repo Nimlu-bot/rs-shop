@@ -52,3 +52,18 @@ export const fetchProductsFailed = createAction(
   '[GOODS EFFECT] FETCH PRODUCTS WAS FAILED',
   props<{ error: Error }>()
 );
+
+export const getPopular = createAction(
+  '[GOODS] GET POPULAR',
+  props<{ categories: string[] }>()
+);
+
+export const getPopularSuccessfull = createAction(
+  '[GOODS EFFECT] SET FETCHED POPULAR',
+  props<{ popular: Iproduct[] }>()
+);
+
+export const getPopularFailed = createAction(
+  '[GOODS EFFECT] FETCH POPULAR WAS FAILED',
+  props<{ error: Error }>()
+);

@@ -1,9 +1,9 @@
 <div class="wrapper">
-  <div class="address item">{{ order.address }}</div>
-  <div class="priсe item">{{ price }}</div>
-  <div class="number item">{{ order.id }}</div>
+  <div class="address item">Адрес: {{ order.address }}</div>
+  <div class="priсe item">Цена: {{ price }} р.</div>
+  <div class="number item">Номер заказа: {{ order.id | slice: 0:6 }}</div>
   <div ngDropdown [renderInPlace]="true" [horizontalPosition]="'center'">
-    <button ngDropdownControl>Продукты</button>
+    <button ngDropdownControl class="dropdown">Продукты&#9660;</button>
     <div ngDropdownContent dropdownClass="slide-fade">
       <ul class="ul">
         <li class="dd-item" *ngFor="let item of order.products">
