@@ -1,11 +1,11 @@
 <div class="wrapper">
-  <div class="photo" (click)="toDetail()">
+  <div class="photo">
     <div class="img-wrapper">
       <img src="{{ product.imageUrls[0] }}" alt="Description" />
     </div>
   </div>
   <div class="description-wrapper">
-    <div class="title" (click)="toDetail()">{{ product.name }}</div>
+    <div class="title">{{ product.name }}</div>
     <div class="rating">
       <div class="star" *appStars="product.rating"></div>
     </div>

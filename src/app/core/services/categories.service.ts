@@ -64,17 +64,15 @@ export class CategoriesService {
   }
 
   getPopular(categories: string[]) {
-    const array = categories.map(
-      (category) =>
-        this.http.get<Iproduct[]>(
-          `http://localhost:3004/goods/category/${category}`
-        )
-      // .pipe(
-      //   tap((product) =>
-      //     this.products.concat(product.filter((item) => item.rating === 5))
-      //   )
-      // )
+    const array = categories.map((category) =>
+      this.http.get<Iproduct[]>(
+        `http://localhost:3004/goods/category/${category}`
+      )
     );
     return concat(...array);
+  }
+
+  fetchProduct(id: string): Observable<Iproduct> {
+    return this.http.get<Iproduct>(`http://localhost:3004/goods/item/${id}`);
   }
 }

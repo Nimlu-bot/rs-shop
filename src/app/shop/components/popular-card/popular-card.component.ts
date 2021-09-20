@@ -9,5 +9,7 @@ import { Iproduct } from '../../../core/constants/models';
 export class PopularCardComponent {
   @Input() product!: Iproduct;
 
-  toDetail() {}
+
+
+
 }
