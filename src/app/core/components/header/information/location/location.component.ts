@@ -11,6 +11,6 @@ export class LocationComponent {
   city: Observable<string>;
 
   constructor(private ipService: IpService) {
-    this.city = this.ipService.sity$;
+    this.city = this.ipService.getSity();
   }
 }

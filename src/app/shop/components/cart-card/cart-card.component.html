@@ -1,6 +1,15 @@
 <div class="photo" (click)="toDetail()">
   <div class="img-wrapper">
-    <img src="{{ product.imageUrls[0] }}" alt="Description" />
+    <img
+      *ngIf="product.imageUrls[0]"
+      src="{{ product.imageUrls[0] }}"
+      alt="Description"
+    />
+    <img
+      *ngIf="!product.imageUrls[0]"
+      src=" /assets/default_preview.jpeg"
+      alt="Description"
+    />
   </div>
 </div>
 <div class="title" (click)="toDetail()">{{ product.name }}</div>

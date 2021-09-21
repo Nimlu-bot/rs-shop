@@ -5,7 +5,12 @@
   <div class="photo">
     <div class="discount" *ngIf="product.rating === 5"></div>
     <div class="img-wrapper">
-      <img src="{{ currentImage }}" alt="Description" />
+      <img *ngIf="currentImage" src="{{ currentImage }}" alt="Description" />
+      <img
+        *ngIf="!currentImage"
+        src=" /assets/default_preview.jpeg"
+        alt="Description"
+      />
     </div>
   </div>
   <div class="slider-wrapper">

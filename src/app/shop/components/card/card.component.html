@@ -2,7 +2,13 @@
   <div class="img-wrapper">
     <img
       class="img-wrapper"
+      *ngIf="product.imageUrls[0]"
       src="{{ product.imageUrls[0] }}"
+      alt="Description"
+    />
+    <img
+      *ngIf="!product.imageUrls[0]"
+      src=" /assets/default_preview.jpeg"
       alt="Description"
     />
   </div>
