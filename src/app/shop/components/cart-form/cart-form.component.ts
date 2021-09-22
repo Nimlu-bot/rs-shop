@@ -47,6 +47,8 @@ export class CartFormComponent implements OnInit {
 
   products!: IcartProduct[];
 
+
+
   public myDatePickerOptions: IMyDpOptions = {
     dateFormat: 'dd.mm.yyyy',
   };
@@ -58,24 +60,24 @@ export class CartFormComponent implements OnInit {
     private fb: FormBuilder
   ) {
     this.cartForm = new FormGroup({
-      name: new FormControl(this.order.name, [
+      name: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(50),
       ]),
-      address: new FormControl(this.order.address, [
+      address: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(250),
       ]),
       phone: new FormControl(
-        this.order.phone,
+        '',
         Validators.pattern(
           '(([+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))s*[)]?[-s.]?[(]?[0-9]{1,3}[)]?([-s.]?[0-9]{3})([-s.]?[0-9]{3,4})'
         )
       ),
       time: new FormControl(null, Validators.required),
-      comment: new FormControl(this.order.comment, Validators.maxLength(250)),
+      comment: new FormControl('', Validators.maxLength(250)),
     });
   }
 
@@ -83,7 +85,7 @@ export class CartFormComponent implements OnInit {
     this.store.select(selectCurrentOrder).subscribe((products) => {
       this.products = products;
     });
-    this.initForm();
+    if (this.order.time !== '') this.initForm();
   }
 
   submit() {
@@ -95,7 +97,7 @@ export class CartFormComponent implements OnInit {
             name: this.cartForm.value.name,
             address: this.cartForm.value.address,
             phone: this.cartForm.value.phone,
-            time: JSON.stringify(this.cartForm.value.time.jsdate),
+            time: '',
             comment: this.cartForm.value.comment,
             complited: false,
             products: this.products,

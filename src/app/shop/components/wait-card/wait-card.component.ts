@@ -22,10 +22,11 @@ export class WaitCardComponent implements OnInit {
   constructor(private store: Store, private router: Router) {}
 
   ngOnInit(): void {
-    this.price = this.order.products.reduce(
+    const rawPrice = this.order.products.reduce(
       (acc, b) => acc + (b.amount || 1) * b.price,
       0
     );
+    this.price = Math.round(rawPrice * 100) / 100;
   }
 
   deleteOrder() {

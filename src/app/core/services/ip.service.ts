@@ -19,7 +19,7 @@ export class IpService {
 
   getSity() {
     const city = this.http
-      .get<IipData>(`http://api.sypexgeo.net/json/`)
+      .get<IipData>(`https://api.sypexgeo.net/json/`)
       .pipe(map((data) => data.city.name_ru));
     return city;
   }

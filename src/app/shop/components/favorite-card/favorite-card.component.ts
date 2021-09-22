@@ -5,7 +5,7 @@ import { setCurrentProduct } from 'src/app/redux/actions/goods.actions';
 import { Router } from '@angular/router';
 import { ROUT } from 'src/app/core/constants/constants';
 import { fromFavorite, toCart } from 'src/app/redux/actions/auth.actions';
-import { selectFavorite } from 'src/app/redux/selectors/auth.selector';
+import { selectCurrentOrder, selectFavorite } from 'src/app/redux/selectors/auth.selector';
 
 @Component({
   selector: 'app-favorite-card',
@@ -19,6 +19,8 @@ export class FavoriteCardComponent implements OnInit {
 
   isFavorite!: boolean;
 
+  isInCart!: boolean;
+
   constructor(private store: Store, private router: Router) {}
 
   ngOnInit(): void {
@@ -27,6 +29,9 @@ export class FavoriteCardComponent implements OnInit {
       this.product = items.filter(
         (product) => product.id === this.productId
       )[0];
+    });
+    this.store.select(selectCurrentOrder).subscribe((items) => {
+      this.isInCart = !!items.find((item) => item.id === this.productId);
     });
   }
 

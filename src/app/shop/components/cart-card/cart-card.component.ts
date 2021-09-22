@@ -21,6 +21,8 @@ export class CartCardComponent implements OnInit {
 
   product!: IcartProduct;
 
+  price = 0;
+
   constructor(private store: Store, private router: Router) {}
 
   ngOnInit(): void {
@@ -29,6 +31,8 @@ export class CartCardComponent implements OnInit {
       this.product = products.filter(
         (product) => product.id === this.productId
       )[0];
+      this.price =
+        Math.round(this.product.amount! * this.product.price * 100) / 100;
     });
   }
 
