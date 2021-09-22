@@ -14,4 +14,6 @@
   <div class="price-message">Общая стоимость:</div>
   <div class="price">{{ price }}</div>
 </div>
-<button class="btn" (click)="confirm()">Подтвердить</button>
+<app-cart-form [order]="order"></app-cart-form>
+<!-- <app-confirm *ngIf="isConfirm$ | async"></app-confirm>
+<button class="btn" (click)="confirm()">Подтвердить</button> -->

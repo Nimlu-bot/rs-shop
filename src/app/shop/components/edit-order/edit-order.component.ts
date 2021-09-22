@@ -46,18 +46,11 @@ export class EditOrderComponent implements OnInit {
   }
 
   increaseAmount(product: IcartProduct) {
-    // this.order.products.map((item) =>
-    //   item.id !== id ? item : { ...item, amount: item.amount! + 1 }
-    // );
+
     this.store.dispatch(increaseAmount({ product }));
   }
 
   decreaseAmount(product: IcartProduct) {
-    // this.order.products.map((item) =>
-    //   item.id !== id
-    //     ? item
-    //     : { ...item, amount: item.amount! > 1 ? item.amount! - 1 : 1 }
-    // );
     this.store.dispatch(decreaseAmount({ product }));
   }
 
