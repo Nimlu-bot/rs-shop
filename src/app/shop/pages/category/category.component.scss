@@ -1,0 +1,89 @@
+@import "/src/variables.scss";
+
+:host {
+  display: flex;
+  width: 80%;
+}
+
+.main-categories {
+  margin-top: 40px;
+  width: 250px;
+  border-right: $button-border;
+}
+
+.category {
+  padding-left: 4px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px 0;
+
+  &:hover {
+    color: #801010;
+    transform: scale(1.01);
+  }
+}
+
+.subcategories {
+  margin-left: 30px;
+  width: 50%;
+}
+
+.subcategories-title {
+  margin: 14px 0;
+  font-size: 28px;
+  line-height: 34px;
+}
+
+.subcategory {
+  margin: 20px 0;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    color: #801010;
+    transform: scale(1.01);
+  }
+}
+
+.subcategories-wrapper {
+  column-width: 48%;
+  column-count: 2;
+  column-gap: 4%;
+}
+
+.category-wrapper {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.category-image {
+  width: 24px;
+  height: 24px;
+  margin: 0 5px;
+}
+
+
+.appliances {
+  background-image: url("../../../../assets/appliances.svg");
+}
+
+.electronics {
+  background-image: url("../../../../assets/electronics.svg");
+}
+
+.computers-peripherals {
+  background-image: url("../../../../assets/computers-peripherals.svg");
+}
+
+.furniture {
+  background-image: url("../../../../assets/furniture.svg");
+}
+
+.hobbies {
+  background-image: url("../../../../assets/hobbies.svg");
+}

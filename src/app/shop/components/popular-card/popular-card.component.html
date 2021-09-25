@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <div class="photo">
+    <div class="img-wrapper">
+      <img
+        *ngIf="product.imageUrls[0]"
+        src="{{ product.imageUrls[0] }}"
+        alt="Description"
+      />
+      <img
+        *ngIf="!product.imageUrls[0]"
+        src=" /assets/default_preview.jpeg"
+        alt="Description"
+      />
+    </div>
+  </div>
+  <div class="description-wrapper">
+    <div class="title">{{ product.name }}</div>
+    <div class="rating">
+      <div class="star" *appStars="product.rating"></div>
+    </div>
+    <div class="price">{{ product.price }} p.</div>
+  </div>
+</div>

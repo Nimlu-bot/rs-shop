@@ -1,0 +1,29 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.goods-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.more {
+  margin: 20px;
+  width: 200px;
+  height: 50px;
+  background-color: #ea1653;
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+.bredcrumbs {
+  align-self: start;
+  padding: 10px 20px;
+}
+
+.title {
+  font-size: 24px;
+}

@@ -1,0 +1,21 @@
+<div class="main-categories">
+  <div class="category-wrapper" *ngFor="let item of categories | async">
+    <div class=" category-image {{ item.id }}"></div>
+    <p class="category" id="{{ item.id }}" (click)="clickHandler(item.id)">
+      {{ item.name }}
+    </p>
+  </div>
+</div>
+
+<div class="subcategories" *ngIf="!!currentCategory">
+  <div class="subcategories-title">{{ currentCategory.name }}</div>
+  <div class="subcategories-wrapper">
+    <p
+      class="subcategory"
+      *ngFor="let item of currentCategory.subCategories"
+      (click)="toCategory(currentCategory.id, item.id)"
+    >
+      {{ item.name }}
+    </p>
+  </div>
+</div>

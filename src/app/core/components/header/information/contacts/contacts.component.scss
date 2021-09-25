@@ -1,0 +1,113 @@
+@import "/src/variables.scss";
+@import "~angular-dropdown/styles";
+
+:host {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.viber {
+  cursor: pointer;
+  font-family: inherit;
+  position: relative;
+  text-align: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50px;
+
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.viber-icon {
+  color: $icon-viber-fill-color;
+}
+
+.more-wrapper {
+  position: relative;
+}
+
+.phone-wrapper,
+.viber-vrapper {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.more-text {
+  font-size: 16px;
+}
+
+.more {
+  margin: 0 10px;
+  background-color: #ffffff;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    color: #801010;
+  }
+}
+
+.ul {
+  display: flex;
+  flex-direction: column;
+  width: 224px;
+  padding: 12px 0;
+  border-radius: 6px;
+  font-family: $alter-font-family;
+  box-shadow: 0 4px 12px 0 rgb(41 44 51 / 12%), 0 2px 2px 0 rgb(41 44 51 / 4%);
+  background-color: $white-color;
+  align-items: flex-start;
+}
+
+.dd-item {
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+.item-wrapper {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.item-ico {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.life {
+  background-image: url("../../../../../../assets/life.svg");
+}
+
+.sity {
+  background-image: url("../../../../../../assets/city.svg");
+}
+
+.tg {
+  background-image: url("../../../../../../assets/telegram.png");
+}
+
+.call {
+  background-image: url("../../../../../../assets/call.svg");
+}
+
+.mail {
+  background-image: url("../../../../../../assets/mail.svg");
+}
+
+.write {
+  background-image: url("../../../../../../assets/write.svg");
+}

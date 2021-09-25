@@ -1,0 +1,41 @@
+<div class="login-wrapper">
+  <p class="title">Вход</p>
+  <form #loginForm="ngForm" novalidate>
+    <div class="form-group">
+      <p class="input-title">Электронная почта</p>
+      <input
+        class="input"
+        type="text"
+        name="email"
+        [(ngModel)]="email"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <p class="input-title">Пароль</p>
+      <input
+        class="input"
+        type="text"
+        name="password"
+        [(ngModel)]="password"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <button
+        [disabled]="loginForm.invalid"
+        class="login-btn"
+        (click)="submit(loginForm)"
+      >
+        Войти
+      </button>
+    </div>
+    <div class="form-group">
+      <button class="link-btn">Не помню пароль</button>
+    </div>
+    <div class="line"></div>
+    <div class="form-group">
+      <button class="link-btn" (click)="toggleLogin()">Регистрация</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,102 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 30px;
+  max-width: 80%;
+  align-items: center;
+  position: relative;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.title {
+  margin: 10px;
+  margin-top: 0;
+  color: #0077cc;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  width: 100px;
+  overflow: hidden;
+}
+
+.description {
+  max-width: 500px;
+  margin: 10px;
+}
+
+.amount-wrapper {
+  display: flex;
+  margin: 10px;
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  border: 1px solid #000000;
+  text-align: center;
+  cursor: pointer;
+}
+
+.amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  border: 1px solid #000000;
+  text-align: center;
+}
+
+.prod-price {
+  margin: 10px;
+  width: 100px;
+}
+
+.delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 31px;
+  background: #ea1653;
+  width: 62px;
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+.price-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.price-message {
+  margin: 10px 20px;
+}
+
+.price {
+  margin: 10px 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.btn {
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 31px;
+  background: #ea1653;
+  width: 100px;
+  color: #ffffff;
+  border-radius: 4px;
+}

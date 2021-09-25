@@ -1,0 +1,14 @@
+:host {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.item {
+  margin: 0 10px;
+}
+
+.popular,
+.price {
+  cursor: pointer;
+}

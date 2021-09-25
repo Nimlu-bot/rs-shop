@@ -1,0 +1,54 @@
+<div class="logo" (click)="toRoot()"></div>
+<button class="catalog" (click)="toCategories()">
+  <div class="cat-image"></div>
+  <span>Каталог Товаров</span>
+</button>
+<!-- <div class="serch">
+  <div class="serch-icon">o</div>
+  <div class="serch-input"></div>
+  <div class="serch-cancel">х</div>
+</div> -->
+<div class="search">
+  <input class="search-input" type="text" placeholder="Поиск товаров" #search />
+  <app-search class="search-result" *ngIf="showChild | async"></app-search>
+</div>
+<div
+  ngDropdown
+  [renderInPlace]="true"
+  horizontalPosition="center"
+  #dropdown="ngDropdown"
+>
+  <button ngDropdownControl class="profile">
+    <div class="profile-image"></div>
+    <span class="profile-text">Аккаунт</span>
+  </button>
+  <div ngDropdownContent dropdownClass="slide-fade">
+    <ul class="ul">
+      <li class="dd-item"><div class="avatar"></div></li>
+      <li class="dd-item">
+        <button
+          class="login-btn"
+          *ngIf="(isLogin | async) === false; else logout"
+          (click)="showHandler()"
+        >
+          Войти
+        </button>
+      </li>
+      <li class="dd-item">
+        <div class="item" (click)="toCart()">Корзина</div>
+      </li>
+      <li class="dd-item">
+        <div class="featured item" (click)="toFavorite()">Избранные товары</div>
+      </li>
+      <li class="dd-item">
+        <div class="viewed item" (click)="toWaitList()">Лист ожидания</div>
+      </li>
+      <!-- <li class="dd-item"><div class="compare item">список сравнения</div></li> -->
+      <ng-template #logout>
+        <button class="login-btn" (click)="logoutHandler()">Выйти</button>
+      </ng-template>
+    </ul>
+  </div>
+</div>
+<app-profile *ngIf="showProfile"></app-profile>
+<button class="cart" (click)="toCart()">Корзина</button>

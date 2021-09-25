@@ -1,0 +1,7 @@
+<div class="wrapper" *ngIf="!!orders.length && !!currentOrder.length">
+  <p class="title">
+    Ваш заказ создан успешно, ожидайте доставку по адресу
+    {{ orders[orders.length - 1].address }} в указанное время
+  </p>
+  <button class="btn" (click)="toMain()">ОК</button>
+</div>

@@ -1,0 +1,15 @@
+<div class="cart-wrapper" *ngIf="products.length">
+  <div class="cart" *ngFor="let item of products">
+    <app-cart-card [productId]="item.id"></app-cart-card>
+  </div>
+  <div class="price-wrapper">
+    <div class="price-message">Общая стоимость:</div>
+    <div class="price">{{ price }} р.</div>
+  </div>
+  <app-cart-form></app-cart-form>
+  <app-confirm *ngIf="isConfirm$ | async"></app-confirm>
+</div>
+<div class="no-product" *ngIf="!products.length">
+  <p class="message">В корзине ничего нет</p>
+  <button class="btn" (click)="toCategories()">Купить</button>
+</div>

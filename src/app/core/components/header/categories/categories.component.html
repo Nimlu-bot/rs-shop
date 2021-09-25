@@ -1,0 +1,7 @@
+<div
+  class="category"
+  *ngFor="let item of categories | async"
+  (click)="goToCategory(item.id)"
+>
+  {{ item.name }}
+</div>

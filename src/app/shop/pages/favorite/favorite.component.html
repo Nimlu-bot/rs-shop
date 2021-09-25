@@ -1,0 +1,9 @@
+<div class="favorite-wrapper" *ngIf="(items | async)?.length">
+  <div class="product" *ngFor="let item of items | async">
+    <app-favorite-card [productId]="item.id"></app-favorite-card>
+  </div>
+</div>
+<div class="empty" *ngIf="!(items | async)?.length">
+  <p class="message">Тут пока ничего нет</p>
+  <button class="btn" (click)="toCategories()">К товарам</button>
+</div>

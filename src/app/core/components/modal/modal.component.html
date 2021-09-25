@@ -1,0 +1,10 @@
+<ng-container *ngIf="showModal | async as display">
+  <section [class.open]="display === true" (click)="close()">
+    <div (click)="$event.stopPropagation()">
+      <button class="close" type="button" (click)="close()">X</button>
+
+      <app-login *ngIf="(isLogin | async) === true"></app-login>
+      <app-register *ngIf="(isLogin | async) === false"></app-register>
+    </div>
+  </section>
+</ng-container>

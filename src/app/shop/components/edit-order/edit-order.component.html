@@ -1,0 +1,18 @@
+<div class="product" *ngFor="let product of products">
+  <div class="title">{{ product.name }}</div>
+  <div class="description">{{ product.description }}</div>
+  <div class="amount-wrapper">
+    <div class="arrow" (click)="decreaseAmount(product)">-</div>
+    <div class="amount">{{ product.amount }}</div>
+    <div class="arrow" (click)="increaseAmount(product)">+</div>
+  </div>
+  <div class="prod-price">{{ product.price! * product.amount! }}</div>
+  <div class="delete" (click)="fromCart(product)">Удалить</div>
+</div>
+<div class="price-wrapper">
+  <div class="price-message">Общая стоимость:</div>
+  <div class="price">{{ price }}</div>
+</div>
+<app-cart-form [order]="order"></app-cart-form>
+<!-- <app-confirm *ngIf="isConfirm$ | async"></app-confirm>
+<button class="btn" (click)="confirm()">Подтвердить</button> -->

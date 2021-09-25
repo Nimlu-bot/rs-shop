@@ -1,0 +1,11 @@
+<div class="bredcrumbs">{{ category.name }} / {{ subCategory.name }}</div>
+<div class="title">{{ subCategory.name }}</div>
+<app-sort></app-sort>
+<div class="goods-wrapper">
+  <div class="product" *ngFor="let product of goodsToShow | sortOrder: filter">
+    <app-card [productId]="product.id"></app-card>
+  </div>
+</div>
+<button class="more" (click)="showMore()" *ngIf="goods.length > showNumber">
+  Показать больше
+</button>

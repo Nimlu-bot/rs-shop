@@ -1,0 +1,135 @@
+@import "/src/variables.scss";
+@import "~angular-dropdown/styles";
+
+:host {
+  display: flex;
+  align-items: center;
+  padding: 24px 0;
+  justify-content: space-around;
+  max-width: 1090px;
+  margin: 0 auto;
+}
+
+.logo {
+  cursor: pointer;
+  height: 42px;
+  width: 100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../../../../assets/logo.png");
+}
+
+.cat-image {
+  height: 20px;
+  width: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../../../../assets/circle.png");
+}
+
+.catalog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  min-width: 119px;
+  border: $button-border;
+  margin: 0 10px;
+  border-radius: 80px;
+  font-family: $alter-font-family;
+  background-color: #ffffff;
+  padding: 3px;
+  font-size: 14px;
+}
+
+.search {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+}
+
+.search-input {
+  height: 42px;
+  min-width: 396px;
+  border: $button-border;
+  border-radius: 80px;
+
+  font-family: $alter-font-family;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 14px;
+  padding: 0 10px;
+
+  outline: none;
+}
+
+
+.profile,
+.cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 119px;
+  height: 42px;
+  border-radius: 80px;
+  background: transparent;
+  transition: 0.2s ease;
+  font-family: $alter-font-family;
+  border: $button-border;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.profile-image {
+  background-image: url("../../../../../assets/accaunt.svg");
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 224px;
+  padding: 12px 0;
+  border-radius: 6px;
+  font-family: $alter-font-family;
+  box-shadow: 0 4px 12px 0 rgb(41 44 51 / 12%), 0 2px 2px 0 rgb(41 44 51 / 4%);
+  background-color: $white-color;
+}
+
+
+.dd-item {
+  padding: 3px 0;
+  cursor: pointer;
+  background-color: #ffffff;
+
+  &:hover {
+    color: #801010;
+  }
+}
+
+.avatar {
+  margin: 0 auto 12px;
+  width: 48px;
+  height: 48px;
+  background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='24' fill='%23E6E7E9'/%3E%3Cpath d='M17.1681 37.8238C14.226 39.4263 11.4492 40.8631 9 43C13.1037 46.4552 18.2761 48 24.0212 48C29.7663 48 35.3079 46.4081 39.4 43C36.783 40.7935 33.5554 39.4999 30.5117 37.9456C29.5379 37.4593 29.0282 36.23 29.0282 35.1429V32.2857C29.2401 32.0448 29.3767 31.8752 29.6358 31.5099C30.663 30.0609 32.0662 28.2435 32.6047 26.5714C33.32 26.5714 33.32 25.1429 33.32 24.4286V20.8571C33.32 20.1638 33.32 19.4286 32.6047 19.4286C32.6047 19.4286 32.6047 16.5714 32.6047 15.1429C32.6047 13.7143 30.4588 8 24.0212 8C17.5835 8 15.4376 13.7143 15.4376 15.1429C15.4376 15.8571 15.4376 19.4286 15.4376 19.4286C14.7224 19.4286 14.722 20.1429 14.722 20.8571L14.7224 24.4286C14.7224 25.2588 14.722 26.5714 15.4376 26.5714C16.2263 29.9999 19.0141 32.2857 19.0141 32.2857V35.1429C19.0132 36.1918 18.0912 37.3207 17.1681 37.8238Z' fill='white'/%3E%3C/svg%3E");
+}
+
+.login-btn {
+  width: 90px;
+  height: 40px;
+  background-color: $blue-color;
+  border-radius: 4px;
+  color: $white-color;
+  font-weight: 700;
+}
+
+.item {
+  padding: 10px;
+  text-align: left;
+}

@@ -1,0 +1,24 @@
+import { createAction, props } from '@ngrx/store';
+import { Icategory } from 'src/app/core/constants/models';
+
+export const getCategories = createAction('[CATEGORIES] GET ALL CATEGORIES');
+
+export const getCategoriesSuccessfull = createAction(
+  '[CATEGORIES EFFECT] SET FETCHED CATEGORIES',
+  props<{ categories: Icategory[] }>()
+);
+
+export const getCategoriesFailed = createAction(
+  '[CATEGORIES EFFECT] FETCH CATEGORIES WAS FAILED',
+  props<{ error: Error }>()
+);
+
+export const setCategory = createAction(
+  '[CATEGORIES ] GET CATEGORY',
+  props<{ categoryId: string }>()
+);
+
+export const setCategoryAndSubCategory = createAction(
+  '[CATEGORIES ] SET CATEGORY AND SUBCATEGORY',
+  props<{ category:string,subCategory:string }>()
+);
